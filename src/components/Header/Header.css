@@ -1,13 +1,17 @@
 .container {
   background-color: var(--smooth-black);
-  padding: 15px;
-  border: 1px solid red;
+  /* padding: 15px; */
   font-family: 'Fredoka One', cursive;
+  display: flex;
+  align-items: center;
+
+  height: 80px;
+  position: sticky;
+  z-index: 1;
 }
 
 .inner-content {
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
 .brand a {
@@ -31,4 +35,41 @@
   color: var(--grey-menu);
   font-size: 20px;
   text-decoration: none;
+}
+
+.nav-wrapper {
+  width: 100%;
+}
+
+@media screen and (max-width: 880px) {
+  .inner-content {
+    display: flex;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    font-size: 30px;
+    color: white;
+    z-index: 1;
+  }
+  .nav-links {
+    right: -450px;
+    position: absolute;
+    margin-top: 40px;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    padding: 0;
+    background-color: var(--smooth-black);
+    transition: all 0.5s ease;
+  }
+  .nav-links li {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .nav-links.active {
+    transition: all 0.6s ease;
+    right: -1px;
+  }
 }
