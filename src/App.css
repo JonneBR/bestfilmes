@@ -1,4 +1,19 @@
-.App {
+:root {
+  --primary: #032541;
+  --smooth-black: #18191a;
+  --green-cyan: #0ad3ac;
+  --white: #fff;
+  --grey-background: #303846;
+}
+
+body {
+  font-weight: 100;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +50,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
