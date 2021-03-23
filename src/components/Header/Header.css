@@ -31,6 +31,17 @@
   margin-left: 35px;
 }
 
+.notification {
+  color: var(--red-notification);
+  position: absolute;
+  margin-top: 25px;
+  top: 0;
+}
+
+.notification.active {
+  display: none;
+}
+
 .nav-menu a {
   color: var(--grey-menu);
   font-size: 20px;
@@ -46,7 +57,7 @@
   color: var(--white);
   font-size: 22px;
 }
-
+/* Fix notification position */
 @media screen and (max-width: 880px) {
   .menu-icon {
     display: flex;
@@ -73,6 +84,17 @@
   .nav-menu li {
     margin-bottom: 30px;
   }
+
+  .notification {
+    color: var(--red-notification);
+    position: relative;
+    margin-left: 5px;
+  }
+
+  .notification.active {
+    display: none;
+  }
+
   .nav-menu.active {
     transition: all 0.6s ease;
     left: 0px;
