@@ -3,8 +3,9 @@ import './Home.css';
 
 export const Home = () => {
   return (
-    <div className='main-content'>
-      <h1>HOME</h1>
+    <div className='container'>
+      <div className='header'></div>
+      <h1></h1>
     </div>
   );
 };
