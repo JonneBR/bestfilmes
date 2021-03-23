@@ -1,6 +1,5 @@
 .container {
   background-color: var(--smooth-black);
-  /* padding: 15px; */
   font-family: 'Fredoka One', cursive;
   display: flex;
   align-items: center;
@@ -41,6 +40,7 @@
   width: 100%;
 }
 
+/* Fix bug when press to inspect */
 @media screen and (max-width: 880px) {
   .inner-content {
     display: flex;
@@ -55,7 +55,7 @@
     right: -450px;
     position: absolute;
     margin-top: 40px;
-    height: 50vh;
+    height: 70vw;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -70,6 +70,6 @@
   }
   .nav-links.active {
     transition: all 0.6s ease;
-    right: -1px;
+    right: 0px;
   }
 }
