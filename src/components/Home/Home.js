@@ -5,12 +5,16 @@ export const Home = () => {
   return (
     <div className='container'>
       <div className='header'>
-        <div className='content-text'>
-          <div className='content-title'>
-            <p>Bem vindo!</p>
-          </div>
-          <div className='content-description'>
-            <p>Explore milhares de filmes e TV Shows</p>
+        <div className='main-image'>
+          <div className='content-text'>
+            <div className='content-title'>
+              <p>Bem vindo!</p>
+            </div>
+            <div className='content-description'>
+              <p>
+                Explore <strong>milhares</strong> de filmes e TV Shows
+              </p>
+            </div>
           </div>
         </div>
       </div>
