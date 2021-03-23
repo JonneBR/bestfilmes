@@ -47,3 +47,18 @@
   font-weight: 100;
   color: var(--green-cyan);
 }
+
+.input-container {
+  position: absolute;
+  align-self: center;
+  text-align: center;
+  width: 65%;
+  height: 200px;
+}
+
+input {
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 150px;
+  width: 83%;
+}

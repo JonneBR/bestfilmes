@@ -16,6 +16,9 @@ export const Home = () => {
               </p>
             </div>
           </div>
+          <div className='input-container'>
+            <input type='text' placeholder='Pesquisar filme' />
+          </div>
         </div>
       </div>
       <h1></h1>
