@@ -47,7 +47,6 @@
   font-size: 22px;
 }
 
-/* Fix bug when press to inspect */
 @media screen and (max-width: 880px) {
   .menu-icon {
     display: flex;
