@@ -8,32 +8,58 @@ export const Header = () => {
   const handleClickMenu = () => setClick(!click);
 
   return (
-    <header>
-      <div className='container'>
-        <div className='brand'>
-          <Link to='/'>BestFilmes</Link>
-        </div>
-        <div onClick={handleClickMenu} className='inner-content'>
-          {click ? (
-            <i className='fas fa-times'></i>
-          ) : (
-            <i className='fas fa-bars'></i>
-          )}
-        </div>
-        <nav className='nav-wrapper'>
-          <ul className={click ? 'nav-links active' : 'nav-links'}>
-            <li>
-              <Link to='mylist'>Minha lista</Link>
-            </li>
-            <li>
-              <Link to='watchlist'>Assistir</Link>
-            </li>
-            <li>
-              <Link to='favorites'>Favoritos</Link>
-            </li>
-          </ul>
-        </nav>
+    <nav className='NavbarItems'>
+      <div className='brand'>
+        <Link to='/'>BestFilmes</Link>
       </div>
-    </header>
+      <div onClick={handleClickMenu} className='menu-icon'>
+        {click ? (
+          <i className='fas fa-times'></i>
+        ) : (
+          <i className='fas fa-bars'></i>
+        )}
+      </div>
+      <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+        <li>
+          <Link to='mylist'>Minha lista</Link>
+        </li>
+        <li>
+          <Link to='watchlist'>Assistir</Link>
+        </li>
+        <li>
+          <Link to='favorites'>Favoritos</Link>
+        </li>
+      </ul>
+    </nav>
+
+    // <header>
+    //   <div className='container'>
+    //     <div className='brand'>
+    //       <Link to='/'>BestFilmes</Link>
+    //     </div>
+    //     <div onClick={handleClickMenu} className='inner-content'>
+    //       {click ? (
+    //         <i className='fas fa-times'></i>
+    //       ) : (
+    //         <i className='fas fa-bars'></i>
+    //       )}
+    //     </div>
+    //     <div className='teste'>
+    //       <nav className='nav-wrapper'>
+    //         <ul className={click ? 'nav-links active' : 'nav-links'}>
+    //           <li>
+    //             <Link to='mylist'>Minha lista</Link>
+    //           </li>
+    //           <li>
+    //             <Link to='watchlist'>Assistir</Link>
+    //           </li>
+    //           <li>
+    //             <Link to='favorites'>Favoritos</Link>
+    //           </li>
+    //         </ul>
+    //       </nav>
+    //     </div>
+    //   </div>
+    // </header>
   );
 };

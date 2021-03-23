@@ -1,15 +1,14 @@
-.container {
+.NavbarItems {
   background-color: var(--smooth-black);
   font-family: 'Fredoka One', cursive;
   display: flex;
   align-items: center;
-
   height: 80px;
   position: sticky;
   z-index: 1;
 }
 
-.inner-content {
+.menu-icon {
   display: none;
 }
 
@@ -20,29 +19,37 @@
   margin-left: 25px;
 }
 
-.nav-links {
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  text-align: initial;
+  margin-top: 25px;
   list-style-type: none;
-  display: flex;
 }
 
-.nav-links li {
-  margin-top: 10px;
+.nav-menu li {
   margin-left: 35px;
 }
 
-.nav-links a {
+.nav-menu a {
   color: var(--grey-menu);
   font-size: 20px;
   text-decoration: none;
 }
 
-.nav-wrapper {
-  width: 100%;
+.nav-menu a:hover {
+  color: var(--white);
+  font-size: 22px;
+}
+
+.nav-menu a:focus {
+  color: var(--white);
+  font-size: 22px;
 }
 
 /* Fix bug when press to inspect */
 @media screen and (max-width: 880px) {
-  .inner-content {
+  .menu-icon {
     display: flex;
     position: absolute;
     right: 0;
@@ -51,25 +58,24 @@
     color: white;
     z-index: 1;
   }
-  .nav-links {
-    right: -450px;
-    position: absolute;
-    margin-top: 40px;
-    height: 70vw;
-    justify-content: center;
-    align-items: center;
+  .nav-menu {
+    display: flex;
     flex-direction: column;
-    width: 50%;
-    padding: 0;
-    background-color: var(--smooth-black);
+    align-content: center;
+    justify-content: center;
+    width: 200px;
+    height: 500px;
+    position: absolute;
+    top: 55px;
+    left: -100%;
     transition: all 0.5s ease;
+    background-color: var(--smooth-black);
   }
-  .nav-links li {
-    margin-top: 30px;
-    margin-left: 0;
+  .nav-menu li {
+    margin-bottom: 30px;
   }
-  .nav-links.active {
+  .nav-menu.active {
     transition: all 0.6s ease;
-    right: 0px;
+    left: 0px;
   }
 }
