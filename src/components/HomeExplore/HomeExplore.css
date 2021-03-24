@@ -1,0 +1,29 @@
+.container2 {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+.slider-wrapper {
+  /* border: 1px solid green; */
+  width: 65%;
+  height: 320px;
+}
+
+.slider-section {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'PT Sans Caption', sans-serif;
+  border: 0;
+  margin-top: 20px;
+  padding: 3px;
+  font-size: 10px;
+  border-radius: 15px;
+  background-color: var(--green-cyan);
+}
+
+.slider-section h1 {
+  font-weight: 100;
+}

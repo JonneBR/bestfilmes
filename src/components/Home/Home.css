@@ -91,6 +91,10 @@ button {
   cursor: pointer;
   outline: none;
 }
+.teste {
+  border: 1px solid red;
+  width: 50%;
+}
 
 @media screen and (max-width: 850px) {
   .main-image {
