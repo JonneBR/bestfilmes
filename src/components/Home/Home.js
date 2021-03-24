@@ -15,13 +15,15 @@ export const Home = () => {
                 Explore <strong>milhares</strong> de filmes e TV Shows
               </p>
             </div>
-          </div>
-          <div className='input-container'>
-            <input type='text' placeholder='Pesquisar filme' />
+            <div className='input-container'>
+              <div className='input-button-wrapper'>
+                <input type='text' placeholder='Pesquisar filme' />
+                <button>PESQUISAR</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <h1></h1>
     </div>
   );
 };
