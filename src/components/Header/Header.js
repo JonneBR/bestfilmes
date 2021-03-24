@@ -4,7 +4,7 @@ import './Header.css';
 
 export const Header = () => {
   const [click, setClick] = useState(false);
-  const [notificationClick, setNotificationClick] = useState(true);
+  const [notificationClick, setNotificationClick] = useState(false);
 
   const handleClickMenu = () => setClick(!click);
 

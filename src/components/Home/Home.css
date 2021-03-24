@@ -88,3 +88,66 @@ button {
   cursor: pointer;
   outline: none;
 }
+
+@media screen and (max-width: 850px) {
+  .main-image {
+    width: 100%;
+    padding: 170px 0;
+    background: url('/src/images/wallpaper-home.jpg') top no-repeat;
+  }
+
+  .content-text {
+    position: absolute;
+    /* border: 1px solid orange; */
+    top: 0;
+    font-family: 'PT Sans Caption', sans-serif;
+    width: 100%;
+    height: 420px;
+  }
+
+  .content-title {
+    font-size: 45px;
+    margin-top: 150px;
+    margin-left: 20px;
+    font-weight: 600;
+  }
+
+  .content-description {
+    font-size: 25px;
+    margin-top: 230px;
+    margin-left: 40px;
+    font-weight: 600;
+  }
+
+  .content-description strong {
+    font-weight: 600;
+  }
+
+  .input-container {
+    height: 20px;
+  }
+
+  input {
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 15px;
+    padding: 9px;
+    width: 98%;
+    outline: none;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-family: 'PT Sans Caption', sans-serif;
+    border: 0;
+    padding: 15px;
+    font-size: 10px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: var(--green-cyan);
+    cursor: pointer;
+    outline: none;
+  }
+}
