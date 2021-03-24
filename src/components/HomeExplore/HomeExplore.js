@@ -3,11 +3,12 @@ import './HomeExplore.css';
 
 export const HomeExplore = () => {
   return (
-    <div className='container2'>
+    <div className='movie-container'>
       <div className='slider-wrapper'>
         <div className='slider-section'>
           <h1>EXPLORE</h1>
         </div>
+        <div className='movie-card'></div>
       </div>
     </div>
   );

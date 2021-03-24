@@ -1,4 +1,4 @@
-.container2 {
+.movie-container {
   /* border: 1px solid red; */
   display: flex;
   justify-content: center;
@@ -26,4 +26,13 @@
 
 .slider-section h1 {
   font-weight: 100;
+}
+
+.movie-card {
+  /* border: 1px solid red; */
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 15%;
+  height: 80%;
+  background-color: var(--grey-menu);
 }
