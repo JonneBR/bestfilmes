@@ -70,6 +70,7 @@ input {
   font-size: 25px;
   padding: 9px;
   width: 98%;
+  outline: none;
 }
 
 button {
@@ -85,4 +86,5 @@ button {
   border-radius: 20px;
   background-color: var(--green-cyan);
   cursor: pointer;
+  outline: none;
 }
