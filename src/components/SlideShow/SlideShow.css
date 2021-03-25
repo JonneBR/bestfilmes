@@ -48,12 +48,28 @@
   color: var(--white);
 }
 
-.add-mylist {
-  /* border: 1px solid red; */
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-evenly;
   position: absolute;
   bottom: 0;
-  padding: 10px;
-  width: 50px;
+  width: 100%;
+  height: 50px;
+}
+
+.add-mylist {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.add-watchlist {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.add-favorites {
   background: none;
   border: none;
   outline: none;

@@ -20,12 +20,20 @@ export const SlideShow = () => {
       <div className='image-card'>
         <img src={cover1} style={{ width: 160 }} alt='' />
         <div className='inner-cards-control'>
-          <button className='add-mylist'>
-            <i class='fas fa-folder-plus'></i>
-          </button>
           <button className='more-informations'>
             <i class='far fa-plus-square'></i>
           </button>
+          <div className='buttons-wrapper'>
+            <button className='add-mylist'>
+              <i class='fas fa-folder-plus'></i>
+            </button>
+            <button className='add-watchlist'>
+              <i class='far fa-eye'></i>
+            </button>
+            <button className='add-favorites'>
+              <i class='far fa-star'></i>
+            </button>
+          </div>
         </div>
       </div>
       {/* </Slider> */}
