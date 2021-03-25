@@ -11,6 +11,15 @@ export const HomeExplore = () => {
         </div>
         {/* <div className='movie-card'></div> */}
         <SlideShow />
+        <div className='slider-section'>
+          <h1>MAIS VOTADOS</h1>
+        </div>
+        <SlideShow />
+
+        <div className='slider-section'>
+          <h1>MAIS POPULARES</h1>
+        </div>
+        <SlideShow />
       </div>
     </div>
   );
