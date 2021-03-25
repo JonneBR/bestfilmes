@@ -43,7 +43,7 @@
 }
 
 .inner-cards-control i {
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   color: var(--white);
 }
@@ -83,4 +83,16 @@
   background: none;
   border: 0;
   outline: none;
+}
+
+@media screen and (max-width: 850px) {
+  .buttons-wrapper {
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+  }
 }
