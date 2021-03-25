@@ -1,4 +1,5 @@
 import React from 'react';
+import { SlideShow } from '../SlideShow/SlideShow';
 import './HomeExplore.css';
 
 export const HomeExplore = () => {
@@ -8,7 +9,8 @@ export const HomeExplore = () => {
         <div className='slider-section'>
           <h1>EXPLORE</h1>
         </div>
-        <div className='movie-card'></div>
+        {/* <div className='movie-card'></div> */}
+        <SlideShow />
       </div>
     </div>
   );

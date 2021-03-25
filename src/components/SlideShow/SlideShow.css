@@ -1,0 +1,70 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.slide-show-wrapper {
+  /* border: 1px solid red; */
+  /* display: flex; */
+  margin-top: 10px;
+}
+
+.image-card {
+  /* border: 1px solid green; */
+  position: relative;
+  height: 230px;
+  /* padding: 10px; */
+  padding-right: 10px;
+  outline: none;
+  /* margin-right: 10px; */
+}
+
+.image-card img {
+  position: relative;
+  border-radius: 15px;
+}
+
+.slide-show-wrapper img {
+  position: relative;
+}
+
+.inner-cards-control {
+  /* border: 1px solid red; */
+  width: 160px;
+  height: 235px;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.inner-cards-control:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+}
+
+.inner-cards-control i {
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--white);
+}
+
+.add-mylist {
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  width: 50px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.more-informations {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background: none;
+  border: 0;
+  outline: none;
+}

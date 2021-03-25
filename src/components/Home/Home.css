@@ -73,7 +73,7 @@ input {
   outline: none;
 }
 
-button {
+.input-button-wrapper button {
   position: absolute;
   top: 0;
   right: 0;
