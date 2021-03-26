@@ -2,7 +2,8 @@ import React from 'react';
 import { SlideShow } from '../SlideShow/SlideShow';
 import './HomeExplore.css';
 
-export const HomeExplore = () => {
+export const HomeExplore = ({ movie }) => {
+  //Chamar api aqui e passar o retorno de acordo com cada nome para SlideShow
   return (
     <div className='movie-container'>
       <div className='slider-wrapper'>
@@ -10,8 +11,8 @@ export const HomeExplore = () => {
           <h1>EXPLORE</h1>
         </div>
         {/* <div className='movie-card'></div> */}
-        <SlideShow />
-        <div className='slider-section'>
+        <SlideShow movie={movie} />
+        {/* <div className='slider-section'>
           <h1>MAIS VOTADOS</h1>
         </div>
         <SlideShow />
@@ -19,7 +20,7 @@ export const HomeExplore = () => {
         <div className='slider-section'>
           <h1>MAIS POPULARES</h1>
         </div>
-        <SlideShow />
+        <SlideShow /> */}
       </div>
     </div>
   );

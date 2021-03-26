@@ -4,7 +4,7 @@ import './Header.css';
 
 export const Header = () => {
   const [click, setClick] = useState(false);
-  const [notificationClick, setNotificationClick] = useState(false);
+  // const [notificationClick, setNotificationClick] = useState(false);
 
   const handleClickMenu = () => setClick(!click);
 
@@ -31,13 +31,13 @@ export const Header = () => {
           {/* <div className='notification-container'> */}
           <Link to='favorites'>Favoritos</Link>
 
-          <strong
+          {/* <strong
             className={
               notificationClick ? 'notification active' : 'notification'
             }
           >
             +2
-          </strong>
+          </strong> */}
         </li>
       </ul>
     </nav>

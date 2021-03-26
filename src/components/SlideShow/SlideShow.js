@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import './SlideShow.css';
 import cover1 from '../../images/cover1.PNG';
 
-export const SlideShow = () => {
+export const SlideShow = ({ movie }) => {
   const settings = {
     centerMode: true,
     swipeToSlide: true,
@@ -59,7 +59,35 @@ export const SlideShow = () => {
   return (
     <div className='slide-show-wrapper'>
       <Slider {...settings}>
-        <div className='image-card'>
+        {movie.map((item) => {
+          return (
+            <div className='image-card'>
+              <img
+                src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
+                style={{ width: 160 }}
+                alt=''
+              />
+              <div className='inner-cards-control'>
+                <button className='more-informations'>
+                  <i className='far fa-plus-square'></i>
+                </button>
+                <div className='buttons-wrapper'>
+                  <button className='add-mylist'>
+                    <i className='fas fa-folder-plus'></i>
+                  </button>
+                  <button className='add-watchlist'>
+                    <i className='far fa-eye'></i>
+                  </button>
+                  <button className='add-favorites'>
+                    <i className='far fa-star'></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* <div className='image-card'>
           <img src={cover1} style={{ width: 160 }} alt='' />
           <div className='inner-cards-control'>
             <button className='more-informations'>
@@ -437,27 +465,7 @@ export const SlideShow = () => {
               </button>
             </div>
           </div>
-        </div>
-
-        <div className='image-card'>
-          <img src={cover1} style={{ width: 160 }} alt='' />
-          <div className='inner-cards-control'>
-            <button className='more-informations'>
-              <i className='far fa-plus-square'></i>
-            </button>
-            <div className='buttons-wrapper'>
-              <button className='add-mylist'>
-                <i className='fas fa-folder-plus'></i>
-              </button>
-              <button className='add-watchlist'>
-                <i className='far fa-eye'></i>
-              </button>
-              <button className='add-favorites'>
-                <i className='far fa-star'></i>
-              </button>
-            </div>
-          </div>
-        </div>
+        </div> */}
       </Slider>
     </div>
   );
