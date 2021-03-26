@@ -18,11 +18,11 @@ const TrendingWeek = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {/* Why trending is running so much? */}
       {/* {console.log('trending1', trending)} */}
       <SlideShow movie={trending} />
-    </div>
+    </>
   );
 };
 

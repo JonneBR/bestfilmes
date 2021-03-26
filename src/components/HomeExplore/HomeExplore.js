@@ -1,4 +1,5 @@
 import React from 'react';
+import { TopRated } from '../TopRated/TopRated';
 import TrendingWeek from '../TrendingWeek/TrendingWeek';
 import './HomeExplore.css';
 
@@ -16,7 +17,7 @@ export const HomeExplore = ({ movie }) => {
         <div className='slider-section'>
           <h1>MAIS VOTADOS</h1>
         </div>
-        <TrendingWeek />
+        <TopRated />
 
         {/* <div className='slider-section'>
           <h1>MAIS POPULARES</h1>
