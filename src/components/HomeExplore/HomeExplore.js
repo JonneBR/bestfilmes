@@ -1,4 +1,5 @@
 import React from 'react';
+import { Popular } from '../Popular/Popular';
 import { TopRated } from '../TopRated/TopRated';
 import TrendingWeek from '../TrendingWeek/TrendingWeek';
 import './HomeExplore.css';
@@ -13,16 +14,17 @@ export const HomeExplore = ({ movie }) => {
         </div>
         {/* <div className='movie-card'></div> */}
         <TrendingWeek />
-        {/* <SlideShow /> */}
         <div className='slider-section'>
           <h1>MAIS VOTADOS</h1>
         </div>
         <TopRated />
-
-        {/* <div className='slider-section'>
-          <h1>MAIS POPULARES</h1>
+        <div className='slider-section'>
+          <h1>POPULARES</h1>
         </div>
-        <SlideShow /> */}
+        <Popular />
+        <div className='slider-section'>
+          <h1>EM BREVE</h1>
+        </div>
       </div>
     </div>
   );
