@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideShow } from '../SlideShow/SlideShow';
+import TrendingWeek from '../TrendingWeek/TrendingWeek';
 import './HomeExplore.css';
 
 export const HomeExplore = ({ movie }) => {
@@ -11,13 +11,14 @@ export const HomeExplore = ({ movie }) => {
           <h1>EXPLORE</h1>
         </div>
         {/* <div className='movie-card'></div> */}
-        <SlideShow movie={movie} />
-        {/* <div className='slider-section'>
+        <TrendingWeek />
+        {/* <SlideShow /> */}
+        <div className='slider-section'>
           <h1>MAIS VOTADOS</h1>
         </div>
-        <SlideShow />
+        <TrendingWeek />
 
-        <div className='slider-section'>
+        {/* <div className='slider-section'>
           <h1>MAIS POPULARES</h1>
         </div>
         <SlideShow /> */}

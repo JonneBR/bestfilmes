@@ -1,7 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './SlideShow.css';
-import cover1 from '../../images/cover1.PNG';
 
 export const SlideShow = ({ movie }) => {
   const settings = {
@@ -61,7 +60,7 @@ export const SlideShow = ({ movie }) => {
       <Slider {...settings}>
         {movie.map((item) => {
           return (
-            <div className='image-card'>
+            <div key={item.id} className='image-card'>
               <img
                 src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
                 style={{ width: 160 }}
