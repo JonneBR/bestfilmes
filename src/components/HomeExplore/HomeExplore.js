@@ -2,6 +2,7 @@ import React from 'react';
 import { Popular } from '../Popular/Popular';
 import { TopRated } from '../TopRated/TopRated';
 import TrendingWeek from '../TrendingWeek/TrendingWeek';
+import { Upcoming } from '../Upcoming/Upcoming';
 import './HomeExplore.css';
 
 export const HomeExplore = ({ movie }) => {
@@ -25,6 +26,7 @@ export const HomeExplore = ({ movie }) => {
         <div className='slider-section'>
           <h1>EM BREVE</h1>
         </div>
+        <Upcoming />
       </div>
     </div>
   );
