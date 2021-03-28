@@ -6,30 +6,33 @@ import { Header } from './components/Header/Header';
 import { Home } from './components/Home/Home';
 import { Mylist } from './components/MyList/Mylist';
 import Watchlist from './components/Watchlist/Watchlist';
+import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
-    <Router>
-      <Header />
+    <GlobalProvider>
+      <Router>
+        <Header />
 
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
 
-        <Route exact path='/mylist'>
-          <Mylist />
-        </Route>
+          <Route exact path='/mylist'>
+            <Mylist />
+          </Route>
 
-        <Route exact path='/watchlist'>
-          <Watchlist />
-        </Route>
+          <Route exact path='/watchlist'>
+            <Watchlist />
+          </Route>
 
-        <Route exact path='/favorites'>
-          <Favorites />
-        </Route>
-      </Switch>
-    </Router>
+          <Route exact path='/favorites'>
+            <Favorites />
+          </Route>
+        </Switch>
+      </Router>
+    </GlobalProvider>
   );
 }
 
