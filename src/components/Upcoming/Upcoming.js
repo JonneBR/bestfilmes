@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SlideShow } from '../SlideShow/SlideShow';
+import SlideShow from '../SlideShow/SlideShow';
 
 export const Upcoming = () => {
   const [upcoming, setUpcoming] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '../../context/GlobalState';
-import { SlideShow } from '../SlideShow/SlideShow';
+import SlideShow from '../SlideShow/SlideShow';
 
 const TrendingWeek = () => {
   const [trending, setTrending] = useState([]);
@@ -22,9 +22,10 @@ const TrendingWeek = () => {
 
   return (
     <>
+      {/* {console.log(trending)} */}
       {/* Why trending is running so much? */}
-      {/* {console.log('trending1', trending)} */}
-      <SlideShow movie={trending} />
+      {exploreList.length > 0 && <SlideShow movie={[]} />}
+      {/* <SlideShow movie={[]} /> */}
     </>
   );
 };

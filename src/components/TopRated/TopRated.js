@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SlideShow } from '../SlideShow/SlideShow';
+import SlideShow from '../SlideShow/SlideShow';
 
 export const TopRated = () => {
   const [topRated, setTopRated] = useState([]);
