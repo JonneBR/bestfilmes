@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import './SlideShow.css';
 
 const SlideShow = ({ movie }) => {
-  console.log(movie);
+  // console.log(movie);
   const settings = {
     centerMode: true,
     swipeToSlide: true,

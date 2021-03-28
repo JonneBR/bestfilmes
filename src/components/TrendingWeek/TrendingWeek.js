@@ -5,20 +5,16 @@ import SlideShow from '../SlideShow/SlideShow';
 const TrendingWeek = () => {
   const { addToExploreList, exploreList } = useContext(GlobalContext);
 
-  useEffect(() => {
-    fetch(
+  const fetchTrendingWeek = async () => {
+    const apiCall = await fetch(
       `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data.errors) {
-          addToExploreList(data.results);
-        } else {
-          console.log('erro');
-        }
-      });
+    );
+    const trendingWeek = await apiCall.json();
+    addToExploreList(trendingWeek.results);
+  };
+  useEffect(() => {
+    fetchTrendingWeek();
   }, []);
-
   return (
     <>
       {/* Why trending is running so much? */}
