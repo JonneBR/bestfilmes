@@ -1,14 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
-import { GlobalContext } from '../../context/GlobalState';
 import './SlideShow.css';
 
 const SlideShow = ({ movie }) => {
-  const { exploreList } = useContext(GlobalContext);
-  // console.log(
-  //   'SLIDE',
-  //   exploreList.map((item) => console.log(item))
-  // );
+  console.log(movie);
   const settings = {
     centerMode: true,
     swipeToSlide: true,
@@ -64,7 +59,7 @@ const SlideShow = ({ movie }) => {
   return (
     <div className='slide-show-wrapper'>
       <Slider {...settings}>
-        {exploreList.map((item) => {
+        {movie.map((item) => {
           return (
             <div key={item.id} className='image-card'>
               <img

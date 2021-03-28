@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { GlobalContext } from '../../context/GlobalState';
 import SlideShow from '../SlideShow/SlideShow';
 
 export const TopRated = () => {
-  const [topRated, setTopRated] = useState([]);
+  const { addToTopRatedList, topRated } = useContext(GlobalContext);
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
@@ -10,15 +11,11 @@ export const TopRated = () => {
       .then((res) => res.json())
       .then((data) => {
         if (!data.errors) {
-          setTopRated(data.results);
+          addToTopRatedList(data.results);
         } else {
           console.log('erro');
         }
       });
   }, []);
-  return (
-    <>
-      <SlideShow movie={topRated} />
-    </>
-  );
+  return <>{topRated.length > 0 && <SlideShow movie={topRated} />}</>;
 };
