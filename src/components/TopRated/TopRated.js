@@ -18,6 +18,7 @@ export const TopRated = () => {
           }
         });
     },
+    // eslint-disable-next-line
     [],
     addToTopRatedList
   );

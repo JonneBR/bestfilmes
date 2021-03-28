@@ -17,6 +17,11 @@ export default (state, action) => {
         ...state,
         popularMovies: [...action.payload],
       };
+    case 'ADD_TO_UP_COMING_LIST':
+      return {
+        ...state,
+        upComingMovies: [...action.payload],
+      };
     default:
       return state;
   }

@@ -12,9 +12,13 @@ const TrendingWeek = () => {
     const trendingWeek = await apiCall.json();
     addToExploreList(trendingWeek.results);
   };
-  useEffect(() => {
-    fetchTrendingWeek();
-  }, []);
+  useEffect(
+    () => {
+      fetchTrendingWeek();
+    },
+    // eslint-disable-next-line
+    []
+  );
   return (
     <>
       {/* Why trending is running so much? */}

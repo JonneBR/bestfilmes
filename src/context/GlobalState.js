@@ -5,7 +5,7 @@ const initialState = {
   exploreList: [],
   topRated: [],
   popularMovies: [],
-  upComing: [],
+  upComingMovies: [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -29,6 +29,9 @@ export const GlobalProvider = (props) => {
   const addToPopularList = (movie) => {
     dispatch({ type: 'ADD_TO_POPULAR_LIST', payload: movie });
   };
+  const addToUpComingList = (movie) => {
+    dispatch({ type: 'ADD_TO_UP_COMING_LIST', payload: movie });
+  };
 
   return (
     <GlobalContext.Provider
@@ -36,10 +39,11 @@ export const GlobalProvider = (props) => {
         exploreList: state.exploreList,
         topRated: state.topRated,
         popularMovies: state.popularMovies,
-        upComing: state.upComing,
+        upComingMovies: state.upComingMovies,
         addToExploreList,
         addToTopRatedList,
         addToPopularList,
+        addToUpComingList,
       }}
     >
       {props.children}

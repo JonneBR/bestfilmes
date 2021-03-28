@@ -26,7 +26,7 @@ export const HomeExplore = ({ movie }) => {
         <div className='slider-section'>
           <h1>EM BREVE</h1>
         </div>
-        {/* <Upcoming /> */}
+        <Upcoming />
       </div>
     </div>
   );
