@@ -12,6 +12,11 @@ export default (state, action) => {
         ...state,
         topRated: [...action.payload],
       };
+    case 'ADD_TO_POPULAR_LIST':
+      return {
+        ...state,
+        popularMovies: [...action.payload],
+      };
     default:
       return state;
   }

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalState';
 import SlideShow from '../SlideShow/SlideShow';
 
 export const Popular = () => {
-  const [popular, setPopular] = useState([]);
+  const { addToPopularList, popularMovies } = useContext(GlobalContext);
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
@@ -10,7 +11,7 @@ export const Popular = () => {
       .then((res) => res.json())
       .then((data) => {
         if (!data.errors) {
-          setPopular(data.results);
+          addToPopularList(data.results);
         } else {
           console.log('erro');
         }
@@ -18,7 +19,7 @@ export const Popular = () => {
   }, []);
   return (
     <>
-      <SlideShow movie={popular} />
+      <SlideShow movie={popularMovies} />
     </>
   );
 };

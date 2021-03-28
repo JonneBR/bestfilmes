@@ -4,7 +4,7 @@ import AppReducer from './AppReducer';
 const initialState = {
   exploreList: [],
   topRated: [],
-  trendingWeek: [],
+  popularMovies: [],
   upComing: [],
 };
 
@@ -26,15 +26,20 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'ADD_TO_TOP_RATED_LIST', payload: movie });
   };
 
+  const addToPopularList = (movie) => {
+    dispatch({ type: 'ADD_TO_POPULAR_LIST', payload: movie });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
         exploreList: state.exploreList,
         topRated: state.topRated,
-        trendingWeek: state.trendingWeek,
+        popularMovies: state.popularMovies,
         upComing: state.upComing,
         addToExploreList,
         addToTopRatedList,
+        addToPopularList,
       }}
     >
       {props.children}
