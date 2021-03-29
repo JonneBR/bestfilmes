@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../../context/GlobalState';
 import SlideShow from '../SlideShow/SlideShow';
 
@@ -11,6 +11,7 @@ const TrendingWeek = () => {
     );
     const trendingWeek = await apiCall.json();
     addToExploreList(trendingWeek.results);
+    console.log('entrandoTrending?');
   };
   if (exploreList.length === 0) {
     fetchTrendingWeek();
