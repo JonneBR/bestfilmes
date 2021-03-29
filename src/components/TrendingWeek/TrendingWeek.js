@@ -12,13 +12,19 @@ const TrendingWeek = () => {
     const trendingWeek = await apiCall.json();
     addToExploreList(trendingWeek.results);
   };
-  useEffect(
-    () => {
-      fetchTrendingWeek();
-    },
-    // eslint-disable-next-line
-    []
-  );
+  if (exploreList.length === 0) {
+    fetchTrendingWeek();
+  }
+  // localStorage.getItem('exploreList')
+  //   ? console.log('verdadeiro')
+  //   : fetchTrendingWeek();
+  // useEffect(
+  //   () => {
+  //     fetchTrendingWeek();
+  //   },
+  //   // eslint-disable-next-line
+  //   []
+  // );
   return (
     <>
       {/* Why trending is running so much? */}
