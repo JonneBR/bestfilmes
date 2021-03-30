@@ -1,0 +1,19 @@
+.container-movie-information {
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.header-content-container {
+  /* border: 1px solid orange; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 90px;
+  padding: 90px;
+  background: var(--light-background);
+}
+
+.header-content {
+  /* border: 1px solid green; */
+  width: 98%;
+}
