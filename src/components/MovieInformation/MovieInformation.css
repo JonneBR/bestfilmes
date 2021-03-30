@@ -15,5 +15,20 @@
 
 .header-content {
   /* border: 1px solid green; */
+  display: flex;
   width: 98%;
+}
+
+.header-content-title {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  margin-left: 15px;
+  font-family: 'PT Sans Caption', cursive;
+  color: var(--white);
+}
+
+.header-content-overview {
+  font-size: 20px;
 }

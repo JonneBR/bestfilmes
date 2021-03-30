@@ -12,6 +12,13 @@ const MovieInformation = () => {
         <div className='header-content-container'>
           <div className='header-content'>
             <img src={cover1} alt='' />
+            <div className='header-content-title'>
+              Pirates of the Caribbean: Dead Man's Chest (2006)
+              <div className='header-content-overview'>
+                Captain Jack Sparrow works his way out of a blood debt with the
+                ghostly Davy Jones to avoid eternal damnation.
+              </div>
+            </div>
           </div>
         </div>
         <h1>MOVIE INFORMATION</h1>
