@@ -6,11 +6,15 @@ import './SlideShow.css';
 const SlideShow = ({ movie }) => {
   const history = useHistory();
 
+  //Routing and passing parameters to MovieInformation
   const handleMovieInformation = (id) => {
     const movieClickedInfo = movie.find(
       (movieSelected) => movieSelected.id === id
     );
-    history.push('/MovieInformation', { params: movieClickedInfo });
+    history.push('/MovieInformation', {
+      params: movieClickedInfo,
+      movie: movie,
+    });
   };
 
   const settings = {
