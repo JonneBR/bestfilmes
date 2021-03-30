@@ -14,10 +14,13 @@ const MovieInformation = () => {
             <img src={cover1} alt='' />
             <div className='header-content-title'>
               Pirates of the Caribbean: Dead Man's Chest (2006)
+              <i className='far fa-star'></i>
               <div className='header-content-overview'>
                 Captain Jack Sparrow works his way out of a blood debt with the
                 ghostly Davy Jones to avoid eternal damnation.
               </div>
+              <i className='fas fa-folder-plus'></i>
+              <i className='far fa-eye'></i>
             </div>
           </div>
         </div>
