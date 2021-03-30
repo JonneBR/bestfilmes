@@ -1,9 +1,18 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Slider from 'react-slick';
 import './SlideShow.css';
 
 const SlideShow = ({ movie }) => {
-  // console.log(movie);
+  const history = useHistory();
+
+  const handleMovieInformation = (id) => {
+    const movieClickedInfo = movie.find(
+      (movieSelected) => movieSelected.id === id
+    );
+    history.push('/MovieInformation', { params: movieClickedInfo });
+  };
+
   const settings = {
     centerMode: true,
     swipeToSlide: true,
@@ -62,15 +71,20 @@ const SlideShow = ({ movie }) => {
         {movie.map((item) => {
           return (
             <div key={item.id} className='image-card'>
+              {/* {console.log(item.id)} */}
               <img
                 src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
                 style={{ width: 160 }}
                 alt=''
               />
               <div className='inner-cards-control'>
-                <button className='more-informations'>
+                <button
+                  onClick={() => handleMovieInformation(item.id)}
+                  className='more-informations'
+                >
                   <i className='far fa-plus-square'></i>
                 </button>
+
                 <div className='buttons-wrapper'>
                   <button className='add-mylist'>
                     <i className='fas fa-folder-plus'></i>

@@ -4,6 +4,7 @@ import './App.css';
 import { Favorites } from './components/Favorites/Favorites';
 import { Header } from './components/Header/Header';
 import { Home } from './components/Home/Home';
+import MovieInformation from './components/MovieInformation/MovieInformation';
 import { Mylist } from './components/MyList/Mylist';
 import Watchlist from './components/Watchlist/Watchlist';
 import { GlobalProvider } from './context/GlobalState';
@@ -29,6 +30,10 @@ function App() {
 
           <Route exact path='/favorites'>
             <Favorites />
+          </Route>
+
+          <Route exact path='/MovieInformation'>
+            <MovieInformation />
           </Route>
         </Switch>
       </Router>
