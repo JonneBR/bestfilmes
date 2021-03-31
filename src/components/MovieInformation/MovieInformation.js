@@ -5,7 +5,7 @@ import './MovieInformation.css';
 
 const MovieInformation = () => {
   const location = useLocation();
-
+  const movieReleaseYear = location.state.params.release_date.split('-')[0];
   return (
     <>
       <div className='container-movie-information'>
@@ -16,7 +16,7 @@ const MovieInformation = () => {
               alt=''
             />
             <div className='header-content-title'>
-              {`${location.state.params.title} (2020)`}
+              {`${location.state.params.title} (${movieReleaseYear})`}
               <i className='far fa-star'></i>
               <div className='header-content-overview'>
                 {location.state.params.overview}
