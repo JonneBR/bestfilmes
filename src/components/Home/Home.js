@@ -8,8 +8,8 @@ export const Home = () => {
   const [results, setResults] = useState([]);
 
   const onChange = (e) => {
+    e.preventDefault();
     setQuery(e.target.value);
-    // console.log(results.length);
 
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
@@ -54,13 +54,7 @@ export const Home = () => {
       </div>
 
       {results.length > 0 ? (
-        <div className='search-movie-result-container'>
-          <div className='grid-wrapper'>
-            {results.map((movie) => (
-              <SearchMovieResult movie={movie} />
-            ))}
-          </div>
-        </div>
+        <SearchMovieResult movies={results} />
       ) : (
         <HomeExplore />
       )}
