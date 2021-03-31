@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import { HomeExplore } from '../HomeExplore/HomeExplore';
 
 export const Home = () => {
+  const [results, setResults] = useState([]);
+
+  const onChange = (e) => {
+    setResults(e.target.value);
+    console.log(results.length);
+  };
+
   return (
     <div className='container'>
       <div className='header'>
@@ -18,14 +25,19 @@ export const Home = () => {
             </div>
             <div className='input-container'>
               <div className='input-button-wrapper'>
-                <input type='text' placeholder='Pesquisar filme' />
+                <input
+                  type='text'
+                  placeholder='Pesquisar filme'
+                  onChange={onChange}
+                />
                 <button>PESQUISAR</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <HomeExplore />
+
+      {results.length > 0 ? console.log('maior') : <HomeExplore />}
     </div>
   );
 };
