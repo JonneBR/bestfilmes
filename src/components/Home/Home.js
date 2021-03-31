@@ -4,10 +4,11 @@ import { HomeExplore } from '../HomeExplore/HomeExplore';
 import SearchMovieResult from '../SearchMovieResult/SearchMovieResult';
 
 export const Home = () => {
+  const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
   const onChange = (e) => {
-    setResults(e.target.value);
+    setQuery(e.target.value);
     // console.log(results.length);
 
     fetch(
@@ -42,6 +43,7 @@ export const Home = () => {
                 <input
                   type='text'
                   placeholder='Pesquisar filme'
+                  value={query}
                   onChange={onChange}
                 />
                 <button>PESQUISAR</button>
@@ -51,7 +53,17 @@ export const Home = () => {
         </div>
       </div>
 
-      {results.length > 0 ? <SearchMovieResult /> : <HomeExplore />}
+      {results.length > 0 ? (
+        <div className='search-movie-result-container'>
+          <div className='grid-wrapper'>
+            {results.map((movie) => (
+              <SearchMovieResult movie={movie} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <HomeExplore />
+      )}
     </div>
   );
 };
