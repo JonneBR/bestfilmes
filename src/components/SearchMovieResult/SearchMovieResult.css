@@ -1,0 +1,12 @@
+.search-movie-result-container {
+  padding: 50px;
+  display: flex;
+
+  justify-content: center;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 15px;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
 import { HomeExplore } from '../HomeExplore/HomeExplore';
+import SearchMovieResult from '../SearchMovieResult/SearchMovieResult';
 
 export const Home = () => {
   const [results, setResults] = useState([]);
@@ -50,7 +51,7 @@ export const Home = () => {
         </div>
       </div>
 
-      {results.length > 0 ? console.log('maior') : <HomeExplore />}
+      {results.length > 0 ? <SearchMovieResult /> : <HomeExplore />}
     </div>
   );
 };
