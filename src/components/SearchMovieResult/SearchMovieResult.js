@@ -1,8 +1,22 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import noPosterAvailable from '../../images/noPosterAvailable.jpg';
 import './SearchMovieResult.css';
 
 const SearchMovieResult = ({ movies }) => {
+  const history = useHistory();
+
+  //Routing and passing parameters to MovieInformation
+  const handleMovieInformation = (id) => {
+    const movieClickedInfo = movies.find(
+      (movieSelected) => movieSelected.id === id
+    );
+    history.push('/MovieInformation', {
+      params: movieClickedInfo,
+      movie: movies,
+    });
+  };
+
   return (
     <>
       <div className='search-movie-result-container'>
@@ -21,7 +35,10 @@ const SearchMovieResult = ({ movies }) => {
                 )}
 
                 <div className='inner-cards-control'>
-                  <button className='more-informations'>
+                  <button
+                    className='more-informations'
+                    onClick={() => handleMovieInformation(movie.id)}
+                  >
                     <i className='far fa-plus-square'></i>
                   </button>
 
