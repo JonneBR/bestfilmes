@@ -41,4 +41,14 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 15px;
   }
+
+  .image-card {
+    /* border: 1px solid red; */
+    padding: 5px;
+  }
+
+  .inner-cards-control {
+    margin-top: 5px;
+    padding-bottom: 5px;
+  }
 }
