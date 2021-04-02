@@ -47,6 +47,13 @@
   font-size: 20px;
 }
 
+.container-movie-information .slider-section {
+  border: 1px solid red;
+  width: 200px;
+  margin-left: 100px;
+  margin-top: 0;
+}
+
 @media screen and (max-width: 860px) {
   .header-content-title {
     font-size: 30px;

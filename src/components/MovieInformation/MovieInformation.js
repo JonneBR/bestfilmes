@@ -25,7 +25,9 @@ const MovieInformation = () => {
             </div>
           </div>
         </div>
-        <h1>MOVIE INFORMATION</h1>
+        <div className='slider-section'>
+          <h1>TITULOS SEMELHANTES</h1>
+        </div>
       </div>
     </>
   );
