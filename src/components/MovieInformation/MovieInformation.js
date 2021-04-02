@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import SimilarMovies from '../SimilarMovies/SimilarMovies';
 import './MovieInformation.css';
 
 const MovieInformation = () => {
@@ -28,6 +29,7 @@ const MovieInformation = () => {
         <div className='slider-section'>
           <h1>TITULOS SEMELHANTES</h1>
         </div>
+        <SimilarMovies id={location.state.params.id} />
       </div>
     </>
   );
