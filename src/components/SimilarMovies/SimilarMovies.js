@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import noPosterAvailable from '../../images/noPosterAvailable.jpg';
+import { useHistory } from 'react-router-dom';
 
 const SimilarMovies = ({ id }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
+  const [updateSimilarMovies, setUpdateSimilarMovies] = useState(false);
+
+  const history = useHistory();
+  const handleMovieInformation = (movieId) => {
+    const movieClickedInfo = similarMovies.find(
+      (movieSelected) => movieSelected.id === movieId
+    );
+    history.push('/MovieInformation', {
+      params: movieClickedInfo,
+      movie: similarMovies,
+    });
+    setUpdateSimilarMovies(!updateSimilarMovies);
+  };
 
   useEffect(() => {
     fetch(
@@ -16,7 +30,7 @@ const SimilarMovies = ({ id }) => {
           console.log('erro');
         }
       });
-  }, []);
+  }, [updateSimilarMovies]);
   return (
     <>
       <div className='search-movie-result-container'>
@@ -37,7 +51,7 @@ const SimilarMovies = ({ id }) => {
                 <div className='inner-cards-control'>
                   <button
                     className='more-informations'
-                    // onClick={() => handleMovieInformation(movie.id)}
+                    onClick={() => handleMovieInformation(movie.id)}
                   >
                     <i className='far fa-plus-square'></i>
                   </button>
