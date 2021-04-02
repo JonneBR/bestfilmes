@@ -8,21 +8,26 @@ export const Home = () => {
   const [results, setResults] = useState([]);
 
   const onChange = (e) => {
-    e.preventDefault();
-    setQuery(e.target.value);
+    //Use if statement in order to avoid a warning on console
+    if (e.target.value !== '') {
+      e.preventDefault();
+      setQuery(e.target.value);
 
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data.errors) {
-          setResults(data.results);
-          // console.log(data.results);
-        } else {
-          setResults([]);
-        }
-      });
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (!data.errors) {
+            setResults(data.results);
+          } else {
+            setResults([]);
+          }
+        });
+    } else {
+      setResults([]);
+      setQuery('');
+    }
   };
 
   return (

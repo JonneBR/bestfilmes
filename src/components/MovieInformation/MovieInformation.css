@@ -102,11 +102,6 @@
     margin-top: 5px;
     font-size: 15px;
   }
-
-  .header-content img {
-    /* border: 1px solid red; */
-    /* width: 150px; */
-  }
 }
 
 @media screen and (max-width: 420px) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import cover1 from '../../images/cover1.PNG';
 import './MovieInformation.css';
 
 const MovieInformation = () => {
