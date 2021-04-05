@@ -60,6 +60,7 @@ export const GlobalProvider = (props) => {
         topRated: state.topRated,
         popularMovies: state.popularMovies,
         upComingMovies: state.upComingMovies,
+        mylistMoviesClickedButton: state.mylistMoviesClickedButton,
         addToExploreList,
         addToTopRatedList,
         addToPopularList,

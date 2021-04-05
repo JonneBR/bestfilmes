@@ -1,24 +1,9 @@
-import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 import Slider from 'react-slick';
-import { GlobalContext } from '../../context/GlobalState';
+import ButtonControls from '../ButtonControls/ButtonControls';
 import './SlideShow.css';
 
 const SlideShow = ({ movie }) => {
-  const { setMylistClickedMoviesColor } = useContext(GlobalContext);
-  const history = useHistory();
-
-  //Routing and passing parameters to MovieInformation
-  const handleMovieInformation = (id) => {
-    const movieClickedInfo = movie.find(
-      (movieSelected) => movieSelected.id === id
-    );
-    history.push('/MovieInformation', {
-      params: movieClickedInfo,
-      movie: movie,
-    });
-  };
-
   const settings = {
     centerMode: true,
     swipeToSlide: true,
@@ -83,29 +68,7 @@ const SlideShow = ({ movie }) => {
                 style={{ width: 160 }}
                 alt=''
               />
-              <div className='inner-cards-control'>
-                <button
-                  onClick={() => handleMovieInformation(item.id)}
-                  className='more-informations'
-                >
-                  <i className='far fa-plus-square'></i>
-                </button>
-
-                <div className='buttons-wrapper'>
-                  <button
-                    onClick={() => setMylistClickedMoviesColor(item.id)}
-                    className='add-mylist'
-                  >
-                    <i className='fas fa-folder-plus'></i>
-                  </button>
-                  <button className='add-watchlist'>
-                    <i className='far fa-eye'></i>
-                  </button>
-                  <button className='add-favorites'>
-                    <i className='far fa-star'></i>
-                  </button>
-                </div>
-              </div>
+              <ButtonControls movie={movie} id={item.id} />
             </div>
           );
         })}

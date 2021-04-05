@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
+import { GlobalContext } from '../../context/GlobalState';
 import SimilarMovies from '../SimilarMovies/SimilarMovies';
 import './MovieInformation.css';
 
 const MovieInformation = () => {
+  const { mylistMoviesClickedButton } = useContext(GlobalContext);
+
   const location = useLocation();
+  const movieExist = mylistMoviesClickedButton.find(
+    (id) => id === location.state.params.id
+  );
   const movieReleaseYear = location.state.params.release_date.split('-')[0];
   return (
     <>
@@ -21,7 +27,14 @@ const MovieInformation = () => {
               <div className='header-content-overview'>
                 {location.state.params.overview}
               </div>
-              <i className='fas fa-folder-plus'></i>
+
+              <i
+                className={
+                  movieExist
+                    ? 'btn-success fas fa-folder-plus'
+                    : 'fas fa-folder-plus'
+                }
+              ></i>
               <i className='far fa-eye'></i>
             </div>
           </div>

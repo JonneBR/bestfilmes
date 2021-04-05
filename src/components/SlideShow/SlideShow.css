@@ -63,6 +63,10 @@
   outline: none;
 }
 
+.add-mylist .btn-success {
+  color: var(--green-cyan);
+}
+
 .add-watchlist {
   background: none;
   border: none;
