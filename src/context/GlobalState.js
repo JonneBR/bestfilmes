@@ -15,6 +15,7 @@ const initialState = {
   upComingMovies: localStorage.getItem('upComingMovies')
     ? JSON.parse(localStorage.getItem('upComingMovies'))
     : [],
+  mylistMoviesClickedButton: [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -48,6 +49,10 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'ADD_TO_UP_COMING_LIST', payload: movie });
   };
 
+  const setMylistClickedMoviesColor = (id) => {
+    dispatch({ type: 'SET_MYLIST_CLICKED_MOVIES', payload: id });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -59,6 +64,7 @@ export const GlobalProvider = (props) => {
         addToTopRatedList,
         addToPopularList,
         addToUpComingList,
+        setMylistClickedMoviesColor,
       }}
     >
       {props.children}

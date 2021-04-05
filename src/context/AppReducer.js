@@ -22,6 +22,14 @@ export default (state, action) => {
         ...state,
         upComingMovies: [...action.payload],
       };
+    case 'SET_MYLIST_CLICKED_MOVIES':
+      return {
+        ...state,
+        mylistMoviesClickedButton: [
+          action.payload,
+          ...state.mylistMoviesClickedButton,
+        ],
+      };
     default:
       return state;
   }

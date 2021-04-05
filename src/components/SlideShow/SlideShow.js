@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Slider from 'react-slick';
+import { GlobalContext } from '../../context/GlobalState';
 import './SlideShow.css';
 
 const SlideShow = ({ movie }) => {
+  const { setMylistClickedMoviesColor } = useContext(GlobalContext);
   const history = useHistory();
 
   //Routing and passing parameters to MovieInformation
@@ -90,7 +92,10 @@ const SlideShow = ({ movie }) => {
                 </button>
 
                 <div className='buttons-wrapper'>
-                  <button className='add-mylist'>
+                  <button
+                    onClick={() => setMylistClickedMoviesColor(item.id)}
+                    className='add-mylist'
+                  >
                     <i className='fas fa-folder-plus'></i>
                   </button>
                   <button className='add-watchlist'>
