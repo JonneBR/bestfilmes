@@ -8,6 +8,8 @@ const ButtonControls = ({ movie }) => {
   const { addMylistClickedButton, mylistClickedButton } = useContext(
     GlobalContext
   );
+  const { removeMylistClickedButton } = useContext(GlobalContext);
+
   const movieExist = mylistClickedButton.find(
     (movieId) => movieId === movie.id
   );
@@ -39,7 +41,7 @@ const ButtonControls = ({ movie }) => {
           <button
             onClick={
               movieExist
-                ? console.log('já clicado')
+                ? () => removeMylistClickedButton(movie.id)
                 : () => addMylistClickedButton(movie.id)
             }
             className='add-mylist'

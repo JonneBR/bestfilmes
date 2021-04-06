@@ -53,6 +53,10 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'ADD_MYLIST_CLICKED_BUTTON', payload: id });
   };
 
+  const removeMylistClickedButton = (id) => {
+    dispatch({ type: 'REMOVE_MYLIST_CLICKED_BUTTON', payload: id });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -66,6 +70,7 @@ export const GlobalProvider = (props) => {
         addToPopularList,
         addToUpComingList,
         addMylistClickedButton,
+        removeMylistClickedButton,
       }}
     >
       {props.children}

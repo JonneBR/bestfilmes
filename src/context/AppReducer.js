@@ -27,6 +27,13 @@ export default (state, action) => {
         ...state,
         mylistClickedButton: [action.payload, ...state.mylistClickedButton],
       };
+    case 'REMOVE_MYLIST_CLICKED_BUTTON':
+      return {
+        ...state,
+        mylistClickedButton: state.mylistClickedButton.filter(
+          (id) => id !== action.payload
+        ),
+      };
     default:
       return state;
   }
