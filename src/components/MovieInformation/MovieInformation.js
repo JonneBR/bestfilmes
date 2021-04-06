@@ -5,10 +5,10 @@ import SimilarMovies from '../SimilarMovies/SimilarMovies';
 import './MovieInformation.css';
 
 const MovieInformation = () => {
-  const { mylistMoviesClickedButton } = useContext(GlobalContext);
+  const { mylistClickedButton } = useContext(GlobalContext);
 
   const location = useLocation();
-  const movieExist = mylistMoviesClickedButton.find(
+  const movieExist = mylistClickedButton.find(
     (id) => id === location.state.params.id
   );
   const movieReleaseYear = location.state.params.release_date.split('-')[0];

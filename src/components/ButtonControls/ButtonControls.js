@@ -5,10 +5,10 @@ import { GlobalContext } from '../../context/GlobalState';
 const ButtonControls = ({ movie }) => {
   // console.log(movieData.id);
 
-  const { setMylistClickedMoviesColor, mylistMoviesClickedButton } = useContext(
+  const { addMylistClickedButton, mylistClickedButton } = useContext(
     GlobalContext
   );
-  const movieExist = mylistMoviesClickedButton.find(
+  const movieExist = mylistClickedButton.find(
     (movieId) => movieId === movie.id
   );
   //   console.log([]);
@@ -40,7 +40,7 @@ const ButtonControls = ({ movie }) => {
             onClick={
               movieExist
                 ? console.log('já clicado')
-                : () => setMylistClickedMoviesColor(movie.id)
+                : () => addMylistClickedButton(movie.id)
             }
             className='add-mylist'
           >
