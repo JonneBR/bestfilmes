@@ -16,21 +16,10 @@ const TrendingWeek = () => {
   if (exploreList.length === 0) {
     fetchTrendingWeek();
   }
-  // localStorage.getItem('exploreList')
-  //   ? console.log('verdadeiro')
-  //   : fetchTrendingWeek();
-  // useEffect(
-  //   () => {
-  //     fetchTrendingWeek();
-  //   },
-  //   // eslint-disable-next-line
-  //   []
-  // );
   return (
     <>
       {/* Why trending is running so much? */}
       {exploreList.length > 0 && <SlideShow movie={exploreList} />}
-      {/* <SlideShow movie={[]} /> */}
     </>
   );
 };

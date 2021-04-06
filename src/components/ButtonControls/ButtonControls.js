@@ -2,24 +2,26 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { GlobalContext } from '../../context/GlobalState';
 
-const ButtonControls = ({ movie, id }) => {
+const ButtonControls = ({ movie }) => {
+  // console.log(movieData.id);
+
   const { setMylistClickedMoviesColor, mylistMoviesClickedButton } = useContext(
     GlobalContext
   );
   const movieExist = mylistMoviesClickedButton.find(
-    (movieId) => movieId === id
+    (movieId) => movieId === movie.id
   );
   //   console.log([]);
   const history = useHistory();
 
   //Routing and passing parameters to MovieInformation
-  const handleMovieInformation = (id) => {
-    const movieClickedInfo = movie.find(
-      (movieSelected) => movieSelected.id === id
-    );
+  const handleMovieInformation = (movie) => {
+    // const movieClickedInfo = movie.find(
+    //   (movieSelected) => movieSelected.id === id
+    // );
     history.push('/MovieInformation', {
-      params: movieClickedInfo,
-      movie: movie,
+      params: movie,
+      //   movie: movie,
     });
   };
 
@@ -27,7 +29,7 @@ const ButtonControls = ({ movie, id }) => {
     <>
       <div className='inner-cards-control'>
         <button
-          onClick={() => handleMovieInformation(id)}
+          onClick={() => handleMovieInformation(movie)}
           className='more-informations'
         >
           <i className='far fa-plus-square'></i>
@@ -38,7 +40,7 @@ const ButtonControls = ({ movie, id }) => {
             onClick={
               movieExist
                 ? console.log('já clicado')
-                : () => setMylistClickedMoviesColor(id)
+                : () => setMylistClickedMoviesColor(movie.id)
             }
             className='add-mylist'
           >

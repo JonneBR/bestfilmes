@@ -68,7 +68,7 @@ const SlideShow = ({ movie }) => {
                 style={{ width: 160 }}
                 alt=''
               />
-              <ButtonControls movie={movie} id={item.id} />
+              <ButtonControls movie={item} />
             </div>
           );
         })}
