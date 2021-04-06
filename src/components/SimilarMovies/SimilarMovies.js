@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import noPosterAvailable from '../../images/noPosterAvailable.jpg';
 import { useHistory } from 'react-router-dom';
+import { GlobalContext } from '../../context/GlobalState';
+import './SimilarMovies.css';
 
 const SimilarMovies = ({ id }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
   const [updateSimilarMovies, setUpdateSimilarMovies] = useState(false);
+
+  const { addMylistClickedButton, mylistClickedButton } = useContext(
+    GlobalContext
+  );
+  const { removeMylistClickedButton } = useContext(GlobalContext);
 
   const history = useHistory();
   const handleMovieInformation = (movieId) => {
@@ -57,8 +64,21 @@ const SimilarMovies = ({ id }) => {
                   </button>
 
                   <div className='buttons-wrapper'>
-                    <button className='add-mylist'>
-                      <i className='fas fa-folder-plus'></i>
+                    <button
+                      onClick={
+                        mylistClickedButton.find((id) => id === movie.id)
+                          ? () => removeMylistClickedButton(movie.id)
+                          : () => addMylistClickedButton(movie.id)
+                      }
+                      className='add-mylist'
+                    >
+                      <i
+                        className={
+                          mylistClickedButton.find((id) => id === movie.id)
+                            ? 'btn-success fas fa-folder-plus'
+                            : 'fas fa-folder-plus'
+                        }
+                      ></i>
                     </button>
                     <button className='add-watchlist'>
                       <i className='far fa-eye'></i>

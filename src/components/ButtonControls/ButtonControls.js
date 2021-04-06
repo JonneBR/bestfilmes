@@ -3,8 +3,6 @@ import { useHistory } from 'react-router';
 import { GlobalContext } from '../../context/GlobalState';
 
 const ButtonControls = ({ movie }) => {
-  // console.log(movieData.id);
-
   const { addMylistClickedButton, mylistClickedButton } = useContext(
     GlobalContext
   );
@@ -13,7 +11,6 @@ const ButtonControls = ({ movie }) => {
   const movieExist = mylistClickedButton.find(
     (movieId) => movieId === movie.id
   );
-  //   console.log([]);
   const history = useHistory();
 
   //Routing and passing parameters to MovieInformation
