@@ -1,29 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import noPosterAvailable from '../../images/noPosterAvailable.jpg';
-import { useHistory } from 'react-router-dom';
-import { GlobalContext } from '../../context/GlobalState';
 import './SimilarMovies.css';
+import ButtonControls from '../ButtonControls/ButtonControls';
 
 const SimilarMovies = ({ id }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
-  const [updateSimilarMovies, setUpdateSimilarMovies] = useState(false);
-
-  const { addMylistClickedButton, mylistClickedButton } = useContext(
-    GlobalContext
-  );
-  const { removeMylistClickedButton } = useContext(GlobalContext);
-
-  const history = useHistory();
-  const handleMovieInformation = (movieId) => {
-    const movieClickedInfo = similarMovies.find(
-      (movieSelected) => movieSelected.id === movieId
-    );
-    history.push('/MovieInformation', {
-      params: movieClickedInfo,
-      movie: similarMovies,
-    });
-    setUpdateSimilarMovies(!updateSimilarMovies);
-  };
 
   useEffect(() => {
     fetch(
@@ -37,7 +18,7 @@ const SimilarMovies = ({ id }) => {
           console.log('erro');
         }
       });
-  }, [updateSimilarMovies]);
+  }, [id]);
   return (
     <>
       <div className='search-movie-result-container'>
@@ -55,39 +36,7 @@ const SimilarMovies = ({ id }) => {
                   <img src={noPosterAvailable} style={{ width: 160 }} alt='' />
                 )}
 
-                <div className='inner-cards-control'>
-                  <button
-                    className='more-informations'
-                    onClick={() => handleMovieInformation(movie.id)}
-                  >
-                    <i className='far fa-plus-square'></i>
-                  </button>
-
-                  <div className='buttons-wrapper'>
-                    <button
-                      onClick={
-                        mylistClickedButton.find((id) => id === movie.id)
-                          ? () => removeMylistClickedButton(movie.id)
-                          : () => addMylistClickedButton(movie.id)
-                      }
-                      className='add-mylist'
-                    >
-                      <i
-                        className={
-                          mylistClickedButton.find((id) => id === movie.id)
-                            ? 'btn-success fas fa-folder-plus'
-                            : 'fas fa-folder-plus'
-                        }
-                      ></i>
-                    </button>
-                    <button className='add-watchlist'>
-                      <i className='far fa-eye'></i>
-                    </button>
-                    <button className='add-favorites'>
-                      <i className='far fa-star'></i>
-                    </button>
-                  </div>
-                </div>
+                <ButtonControls movie={movie} />
               </div>
             );
           })}
