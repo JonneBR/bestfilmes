@@ -9,7 +9,7 @@ const MovieInformation = () => {
 
   const location = useLocation();
   const movieExist = mylistClickedButton.find(
-    (id) => id === location.state.params.id
+    (mylistMovie) => mylistMovie.id === location.state.params.id
   );
   const movieReleaseYear = location.state.params.release_date.split('-')[0];
   return (
