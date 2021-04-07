@@ -49,12 +49,12 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'ADD_TO_UP_COMING_LIST', payload: movie });
   };
 
-  const addMylistClickedButton = (id) => {
-    dispatch({ type: 'ADD_MYLIST_CLICKED_BUTTON', payload: id });
+  const addMylistClickedButton = (movie) => {
+    dispatch({ type: 'ADD_MYLIST_CLICKED_BUTTON', payload: movie });
   };
 
-  const removeMylistClickedButton = (id) => {
-    dispatch({ type: 'REMOVE_MYLIST_CLICKED_BUTTON', payload: id });
+  const removeMylistClickedButton = (movie) => {
+    dispatch({ type: 'REMOVE_MYLIST_CLICKED_BUTTON', payload: movie });
   };
 
   return (

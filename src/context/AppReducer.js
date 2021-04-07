@@ -31,7 +31,7 @@ export default (state, action) => {
       return {
         ...state,
         mylistClickedButton: state.mylistClickedButton.filter(
-          (id) => id !== action.payload
+          (movie) => movie.id !== action.payload.id
         ),
       };
     default:
