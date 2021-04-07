@@ -4,3 +4,18 @@
   z-index: 0;
   background: url('/src/images/wallpaper-mylist.PNG') center no-repeat;
 }
+.title-section {
+  width: 82%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title-section .slider-section {
+  margin: 0;
+  border-radius: 40px;
+}
+
+.title-section .slider-section h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
