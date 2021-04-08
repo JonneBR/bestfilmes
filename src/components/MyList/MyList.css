@@ -19,3 +19,11 @@
   font-size: 18px;
   font-weight: 600;
 }
+
+.no-movies-container {
+  /* border: 1px solid red; */
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  color: var(--grey-menu);
+  margin-top: 100px;
+}
