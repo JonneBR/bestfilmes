@@ -5,9 +5,13 @@ import SimilarMovies from '../SimilarMovies/SimilarMovies';
 import './MovieInformation.css';
 
 const MovieInformation = () => {
-  const { mylistClickedButton } = useContext(GlobalContext);
+  const { addMylistClickedButton, mylistClickedButton } = useContext(
+    GlobalContext
+  );
+  const { removeMylistClickedButton } = useContext(GlobalContext);
 
   const location = useLocation();
+
   const movieExist = mylistClickedButton.find(
     (mylistMovie) => mylistMovie.id === location.state.params.id
   );
@@ -29,6 +33,11 @@ const MovieInformation = () => {
               </div>
 
               <i
+                onClick={
+                  movieExist
+                    ? () => removeMylistClickedButton(location.state.params)
+                    : () => addMylistClickedButton(location.state.params)
+                }
                 className={
                   movieExist
                     ? 'btn-success fas fa-folder-plus'
