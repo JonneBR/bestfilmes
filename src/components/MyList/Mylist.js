@@ -47,7 +47,6 @@ export const Mylist = () => {
           <div className='no-movies-container'>
             <h1>NÃO HÁ FILMES ADICIONADOS EM SUA LISTA</h1>
           </div>
-          // console.log('NÃO HÁ FILMES PARA EXIBIR')
         )}
       </div>
     </>
