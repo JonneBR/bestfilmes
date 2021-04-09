@@ -7,7 +7,7 @@ const TrendingWeek = () => {
 
   const fetchTrendingWeek = async () => {
     const apiCall = await fetch(
-      `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_TMDB_KEY}&language=pt-BR`
     );
     const trendingWeek = await apiCall.json();
     addToExploreList(trendingWeek.results);
