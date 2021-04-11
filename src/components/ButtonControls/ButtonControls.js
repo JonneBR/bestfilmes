@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { GlobalContext } from '../../context/GlobalState';
 
-//https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
 //https://www.youtube.com/watch?v=
 
 const ButtonControls = ({ movie }) => {
