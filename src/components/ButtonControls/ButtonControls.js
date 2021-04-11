@@ -3,6 +3,7 @@ import { useHistory } from 'react-router';
 import { GlobalContext } from '../../context/GlobalState';
 
 //https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
+//https://www.youtube.com/watch?v=
 
 const ButtonControls = ({ movie }) => {
   const { addMylistClickedButton, mylistClickedButton } = useContext(
@@ -23,6 +24,12 @@ const ButtonControls = ({ movie }) => {
     history.push('/MovieInformation', {
       params: movie,
       //   movie: movie,
+    });
+  };
+
+  const handleWatchlist = (movie) => {
+    history.push('/watchlist', {
+      params: movie,
     });
   };
 
@@ -53,7 +60,10 @@ const ButtonControls = ({ movie }) => {
               }
             ></i>
           </button>
-          <button className='add-watchlist'>
+          <button
+            onClick={() => handleWatchlist(movie)}
+            className='add-watchlist'
+          >
             <i className='far fa-eye'></i>
           </button>
           <button className='add-favorites'>
