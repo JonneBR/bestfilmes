@@ -13,14 +13,18 @@ const Watchlist = () => {
       `
     );
     const movieData = await apiCall.json();
-    console.log('trailer', movieData.results);
+    //THIS LINE BELLOW IS ONLY FOR TESTING, MUST BE REFACTORED
+    const trailer = movieData.results.filter(
+      (movie) => movie.type === 'Trailer'
+    );
+    setMovieTrailer(trailer[0]['key']);
   };
   if (location.state.params.id) {
     fetchMovieTrailer();
   } else {
     console.log('exibindo');
   }
-
+  console.log(movieTrailer);
   return (
     <>
       <div className='container'>
@@ -38,7 +42,7 @@ const Watchlist = () => {
                 margin: 'auto',
                 display: 'block',
               }}
-              src='https://www.youtube.com/embed/7sDY4m8KNLc?autoplay=1'
+              src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1`}
               frameBorder='0'
             ></iframe>
           </div>
