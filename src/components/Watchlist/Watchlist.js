@@ -5,7 +5,6 @@ import './Watchlist.css';
 const Watchlist = () => {
   const [movieTrailer, setMovieTrailer] = useState('');
   const location = useLocation();
-  console.log(location.state.params.id);
 
   const fetchMovieTrailer = async () => {
     const apiCall = await fetch(
@@ -19,12 +18,11 @@ const Watchlist = () => {
     );
     setMovieTrailer(trailer[0]['key']);
   };
-  if (location.state.params.id) {
+
+  if (location.state !== undefined && movieTrailer === '') {
     fetchMovieTrailer();
-  } else {
-    console.log('exibindo');
   }
-  console.log(movieTrailer);
+
   return (
     <>
       <div className='container'>
@@ -33,18 +31,22 @@ const Watchlist = () => {
         </div>
         <div className='title-section'>
           <div className='video-trailer-section'>
-            <h1>Assistir</h1>
-            <iframe
-              autoPlay
-              style={{
-                width: '1210px',
-                height: '800px',
-                margin: 'auto',
-                display: 'block',
-              }}
-              src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1`}
-              frameBorder='0'
-            ></iframe>
+            {movieTrailer ? (
+              <iframe
+                autoPlay
+                style={{
+                  width: '1210px',
+                  height: '800px',
+                  margin: 'auto',
+                  marginTop: '50px',
+                  display: 'block',
+                }}
+                src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1`}
+                frameBorder='0'
+              ></iframe>
+            ) : (
+              <h1>Assistir</h1>
+            )}
           </div>
         </div>
       </div>
