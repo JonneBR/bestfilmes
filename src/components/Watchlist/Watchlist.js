@@ -16,7 +16,7 @@ const Watchlist = () => {
     const trailer = movieData.results.filter(
       (movie) => movie.type === 'Trailer'
     );
-    setMovieTrailer(trailer[0]['key']);
+    trailer.length > 0 && setMovieTrailer(trailer[0]['key']);
   };
 
   if (location.state !== undefined && movieTrailer === '') {
@@ -29,26 +29,28 @@ const Watchlist = () => {
         <div className='header'>
           <div className='main-image-watchlist'></div>
         </div>
-        <div className='title-section'>
-          <div className='video-trailer-section'>
-            {movieTrailer ? (
-              <iframe
-                autoPlay
-                style={{
-                  width: '1210px',
-                  height: '800px',
-                  margin: 'auto',
-                  marginTop: '50px',
-                  display: 'block',
-                }}
-                src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1`}
-                frameBorder='0'
-              ></iframe>
-            ) : (
-              <h1>Assistir</h1>
-            )}
-          </div>
+        {/* <div className='title-section'> */}
+        <div className='video-trailer-section'>
+          {movieTrailer ? (
+            <iframe
+              autoPlay
+              style={{
+                width: '1210px',
+                height: '800px',
+                margin: 'auto',
+                marginTop: '50px',
+                display: 'block',
+              }}
+              src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1`}
+              frameBorder='0'
+            ></iframe>
+          ) : (
+            <div className='no-movies-container'>
+              <h1>CLIQUE EM UM FILME ANTES PARA VER SEU TRAILER</h1>
+            </div>
+          )}
         </div>
+        {/* </div> */}
       </div>
     </>
   );
