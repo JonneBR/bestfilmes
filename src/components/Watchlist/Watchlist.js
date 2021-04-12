@@ -16,7 +16,9 @@ const Watchlist = () => {
     const trailer = movieData.results.filter(
       (movie) => movie.type === 'Trailer'
     );
-    trailer.length > 0 && setMovieTrailer(trailer[0]['key']);
+    trailer.length > 0
+      ? setMovieTrailer(trailer[0]['key'])
+      : setMovieTrailer(false);
   };
 
   if (location.state !== undefined && movieTrailer === '') {
@@ -44,6 +46,10 @@ const Watchlist = () => {
               src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1`}
               frameBorder='0'
             ></iframe>
+          ) : movieTrailer === false ? (
+            <div className='no-movies-container'>
+              <h1>NÃO HÁ TRAILER PARA ESTE FILME</h1>
+            </div>
           ) : (
             <div className='no-movies-container'>
               <h1>CLIQUE EM UM FILME ANTES PARA VER SEU TRAILER</h1>
