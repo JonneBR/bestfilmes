@@ -1,21 +1,24 @@
 import React, { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { GlobalContext } from '../../context/GlobalState';
+import { handleWatchlist } from '../functions/handleWatchlist/handleWatchlist';
 import SimilarMovies from '../SimilarMovies/SimilarMovies';
 import './MovieInformation.css';
 
 const MovieInformation = () => {
+  const history = useHistory();
+  const location = useLocation();
+
   const { addMylistClickedButton, mylistClickedButton } = useContext(
     GlobalContext
   );
   const { removeMylistClickedButton } = useContext(GlobalContext);
 
-  const location = useLocation();
-
   const movieExist = mylistClickedButton.find(
     (mylistMovie) => mylistMovie.id === location.state.params.id
   );
   const movieReleaseYear = location.state.params.release_date.split('-')[0];
+
   return (
     <>
       <div className='container-movie-information'>
@@ -44,7 +47,10 @@ const MovieInformation = () => {
                     : 'fas fa-folder-plus'
                 }
               ></i>
-              <i className='far fa-eye'></i>
+              <i
+                onClick={() => handleWatchlist(location.state.params, history)}
+                className='far fa-eye'
+              ></i>
             </div>
           </div>
         </div>

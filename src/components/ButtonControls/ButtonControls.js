@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { GlobalContext } from '../../context/GlobalState';
+import { handleWatchlist } from '../functions/handleWatchlist/handleWatchlist';
 
 //https://www.youtube.com/watch?v=
 
 const ButtonControls = ({ movie }) => {
+  const history = useHistory();
+
   const { addMylistClickedButton, mylistClickedButton } = useContext(
     GlobalContext
   );
@@ -13,21 +16,9 @@ const ButtonControls = ({ movie }) => {
   const movieExist = mylistClickedButton.find(
     (mylistMovie) => mylistMovie.id === movie.id
   );
-  const history = useHistory();
 
-  //Routing and passing parameters to MovieInformation
   const handleMovieInformation = (movie) => {
-    // const movieClickedInfo = movie.find(
-    //   (movieSelected) => movieSelected.id === id
-    // );
     history.push('/MovieInformation', {
-      params: movie,
-      //   movie: movie,
-    });
-  };
-
-  const handleWatchlist = (movie) => {
-    history.push('/watchlist', {
       params: movie,
     });
   };
@@ -60,7 +51,7 @@ const ButtonControls = ({ movie }) => {
             ></i>
           </button>
           <button
-            onClick={() => handleWatchlist(movie)}
+            onClick={() => handleWatchlist(movie, history)}
             className='add-watchlist'
           >
             <i className='far fa-eye'></i>
