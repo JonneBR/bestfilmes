@@ -5,7 +5,6 @@ import './Watchlist.css';
 const Watchlist = () => {
   const [movieTrailer, setMovieTrailer] = useState('');
   const location = useLocation();
-
   const fetchMovieTrailer = async () => {
     const apiCall = await fetch(
       `https://api.themoviedb.org/3/movie/${location.state.params.id}/videos?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US
@@ -35,6 +34,7 @@ const Watchlist = () => {
         <div className='video-trailer-section'>
           {movieTrailer ? (
             <iframe
+              title={location.state.params.original_title}
               autoPlay
               style={{
                 width: '1210px',
@@ -43,7 +43,7 @@ const Watchlist = () => {
                 marginTop: '50px',
                 display: 'block',
               }}
-              src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1`}
+              src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1&controls=0&rel=0`}
               frameBorder='0'
             ></iframe>
           ) : movieTrailer === false ? (
