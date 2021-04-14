@@ -7,7 +7,7 @@ import Spinner from '../Spinner/Spinner';
 const SimilarMovies = ({ id }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  console.log(id);
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`

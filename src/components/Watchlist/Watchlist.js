@@ -11,7 +11,6 @@ const Watchlist = () => {
       `
     );
     const movieData = await apiCall.json();
-    //THIS LINE BELLOW IS ONLY FOR TESTING, MUST BE REFACTORED
     const trailer = movieData.results.filter(
       (movie) => movie.type === 'Trailer'
     );
@@ -30,7 +29,6 @@ const Watchlist = () => {
         <div className='header'>
           <div className='main-image-watchlist'></div>
         </div>
-        {/* <div className='title-section'> */}
         <div className='video-trailer-section'>
           {movieTrailer ? (
             <iframe
@@ -50,7 +48,6 @@ const Watchlist = () => {
             </div>
           )}
         </div>
-        {/* </div> */}
       </div>
     </>
   );
