@@ -23,8 +23,63 @@
 
 @media screen and (max-width: 1050px) {
   .video-player {
-    border: 1px solid red;
     width: 800px;
     height: 600px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .main-image-watchlist {
+    width: 100%;
+    padding: 170px 0;
+    background: url('/src/images/wallpaper-watchlist.jpg') center no-repeat;
+    background-size: cover;
+  }
+
+  .video-player {
+    width: 700px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .video-player {
+    width: 600px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .video-player {
+    width: 550px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .video-player {
+    width: 480px;
+    height: 390px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video-player {
+    width: 380px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .video-player {
+    width: 350px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .video-player {
+    width: 300px;
+    height: 250px;
   }
 }
