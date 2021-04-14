@@ -34,15 +34,9 @@ const Watchlist = () => {
         <div className='video-trailer-section'>
           {movieTrailer ? (
             <iframe
+              className='video-player'
               title={location.state.params.original_title}
               autoPlay
-              style={{
-                width: '1210px',
-                height: '800px',
-                margin: 'auto',
-                marginTop: '50px',
-                display: 'block',
-              }}
               src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1&controls=0&rel=0`}
               frameBorder='0'
             ></iframe>

@@ -5,3 +5,26 @@
   background: url('/src/images/wallpaper-watchlist.jpg') center no-repeat;
   background-size: cover;
 }
+
+.video-player {
+  width: 1210px;
+  height: 800px;
+  margin: auto;
+  margin-top: 50px;
+  display: block;
+}
+
+@media screen and (max-width: 1350px) {
+  .video-player {
+    width: 1000px;
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .video-player {
+    border: 1px solid red;
+    width: 800px;
+    height: 600px;
+  }
+}
