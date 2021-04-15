@@ -22,7 +22,7 @@ const Watchlist = () => {
   if (location.state !== undefined && movieTrailer === '') {
     fetchMovieTrailer();
   }
-
+  console.log(location.state);
   return (
     <>
       <div className='container'>
@@ -33,7 +33,11 @@ const Watchlist = () => {
           {movieTrailer ? (
             <iframe
               className='video-player'
-              title={location.state.params.original_title}
+              title={
+                location.state !== undefined
+                  ? location.state.params.original_title
+                  : 'false'
+              }
               autoPlay
               src={`https://www.youtube.com/embed/${movieTrailer}?autoplay=1&controls=0&rel=0`}
               frameBorder='0'
