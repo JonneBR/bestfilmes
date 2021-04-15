@@ -9,12 +9,10 @@ const MovieInformation = () => {
   const history = useHistory();
   const location = useLocation();
 
-  const { addMylistClickedButton, mylistClickedButton } = useContext(
-    GlobalContext
-  );
+  const { addMovieToMylist, mylistMovies } = useContext(GlobalContext);
   const { removeMylistClickedButton } = useContext(GlobalContext);
 
-  const movieExist = mylistClickedButton.find(
+  const movieExist = mylistMovies.find(
     (mylistMovie) => mylistMovie.id === location.state.params.id
   );
   const movieReleaseYear = location.state.params.release_date.split('-')[0];
@@ -39,7 +37,7 @@ const MovieInformation = () => {
                 onClick={
                   movieExist
                     ? () => removeMylistClickedButton(location.state.params)
-                    : () => addMylistClickedButton(location.state.params)
+                    : () => addMovieToMylist(location.state.params)
                 }
                 className={
                   movieExist

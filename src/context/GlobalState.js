@@ -15,7 +15,7 @@ const initialState = {
   upComingMovies: localStorage.getItem('upComingMovies')
     ? JSON.parse(localStorage.getItem('upComingMovies'))
     : [],
-  mylistClickedButton: [],
+  mylistMovies: [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -49,8 +49,8 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'ADD_TO_UP_COMING_LIST', payload: movie });
   };
 
-  const addMylistClickedButton = (movie) => {
-    dispatch({ type: 'ADD_MYLIST_CLICKED_BUTTON', payload: movie });
+  const addMovieToMylist = (movie) => {
+    dispatch({ type: 'ADD_MOVIE_TO_MYLIST', payload: movie });
   };
 
   const removeMylistClickedButton = (movie) => {
@@ -64,12 +64,12 @@ export const GlobalProvider = (props) => {
         topRated: state.topRated,
         popularMovies: state.popularMovies,
         upComingMovies: state.upComingMovies,
-        mylistClickedButton: state.mylistClickedButton,
+        mylistMovies: state.mylistMovies,
         addToExploreList,
         addToTopRatedList,
         addToPopularList,
         addToUpComingList,
-        addMylistClickedButton,
+        addMovieToMylist,
         removeMylistClickedButton,
       }}
     >

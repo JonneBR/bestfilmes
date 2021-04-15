@@ -68,7 +68,6 @@ const SlideShow = ({ movie }) => {
                 style={{ width: 160 }}
                 alt=''
               />
-              {console.log('rendering??')}
               <ButtonControls movie={item} />
             </div>
           );

@@ -5,7 +5,7 @@ import { GlobalContext } from '../../context/GlobalState';
 import ButtonControls from '../ButtonControls/ButtonControls';
 
 export const Mylist = () => {
-  const { mylistClickedButton } = useContext(GlobalContext);
+  const { mylistMovies } = useContext(GlobalContext);
   return (
     <>
       <div className='container'>
@@ -17,10 +17,10 @@ export const Mylist = () => {
             <h1>Minha lista</h1>
           </div>
         </div>
-        {mylistClickedButton.length > 0 ? (
+        {mylistMovies.length > 0 ? (
           <div className='search-movie-result-container'>
             <div className='grid-wrapper'>
-              {mylistClickedButton.map((movie) => {
+              {mylistMovies.map((movie) => {
                 return (
                   <div key={movie.id} className='image-card'>
                     {movie.poster_path !== null ? (

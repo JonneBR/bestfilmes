@@ -22,10 +22,10 @@ export default (state, action) => {
         ...state,
         upComingMovies: [...action.payload],
       };
-    case 'ADD_MYLIST_CLICKED_BUTTON':
+    case 'ADD_MOVIE_TO_MYLIST':
       return {
         ...state,
-        mylistClickedButton: [action.payload, ...state.mylistClickedButton],
+        mylistMovies: [action.payload, ...state.mylistMovies],
       };
     case 'REMOVE_MYLIST_CLICKED_BUTTON':
       return {

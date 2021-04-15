@@ -8,12 +8,10 @@ import { handleWatchlist } from '../functions/handleWatchlist/handleWatchlist';
 const ButtonControls = ({ movie }) => {
   const history = useHistory();
 
-  const { addMylistClickedButton, mylistClickedButton } = useContext(
-    GlobalContext
-  );
+  const { addMovieToMylist, mylistMovies } = useContext(GlobalContext);
   const { removeMylistClickedButton } = useContext(GlobalContext);
 
-  const movieExist = mylistClickedButton.find(
+  const movieExist = mylistMovies.find(
     (mylistMovie) => mylistMovie.id === movie.id
   );
 
@@ -39,7 +37,7 @@ const ButtonControls = ({ movie }) => {
             onClick={
               movieExist
                 ? () => removeMylistClickedButton(movie)
-                : () => addMylistClickedButton(movie)
+                : () => addMovieToMylist(movie)
             }
             className='add-mylist'
           >
