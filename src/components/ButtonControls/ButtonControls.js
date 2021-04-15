@@ -21,6 +21,7 @@ const ButtonControls = ({ movie }) => {
     history.push('/MovieInformation', {
       params: movie,
     });
+    window.scrollTo(0, 0);
   };
 
   return (
