@@ -15,7 +15,9 @@ const initialState = {
   upComingMovies: localStorage.getItem('upComingMovies')
     ? JSON.parse(localStorage.getItem('upComingMovies'))
     : [],
-  mylistMovies: [],
+  mylistMovies: localStorage.getItem('mylistMovies')
+    ? JSON.parse(localStorage.getItem('mylistMovies'))
+    : [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -31,6 +33,7 @@ export const GlobalProvider = (props) => {
       'upComingMovies',
       JSON.stringify(state.upComingMovies)
     );
+    localStorage.setItem('mylistMovies', JSON.stringify(state.mylistMovies));
   }, [state]);
 
   //actions
