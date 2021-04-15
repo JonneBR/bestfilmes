@@ -10,7 +10,7 @@ const MovieInformation = () => {
   const location = useLocation();
 
   const { addMovieToMylist, mylistMovies } = useContext(GlobalContext);
-  const { removeMylistClickedButton } = useContext(GlobalContext);
+  const { removeMovieFromMylist } = useContext(GlobalContext);
 
   const movieExist = mylistMovies.find(
     (mylistMovie) => mylistMovie.id === location.state.params.id
@@ -36,7 +36,7 @@ const MovieInformation = () => {
               <i
                 onClick={
                   movieExist
-                    ? () => removeMylistClickedButton(location.state.params)
+                    ? () => removeMovieFromMylist(location.state.params)
                     : () => addMovieToMylist(location.state.params)
                 }
                 className={

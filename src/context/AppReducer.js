@@ -27,10 +27,10 @@ export default (state, action) => {
         ...state,
         mylistMovies: [action.payload, ...state.mylistMovies],
       };
-    case 'REMOVE_MYLIST_CLICKED_BUTTON':
+    case 'REMOVE_MOVIE_FROM_MYLIST':
       return {
         ...state,
-        mylistClickedButton: state.mylistClickedButton.filter(
+        mylistMovies: state.mylistMovies.filter(
           (movie) => movie.id !== action.payload.id
         ),
       };

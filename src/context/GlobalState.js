@@ -53,8 +53,8 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'ADD_MOVIE_TO_MYLIST', payload: movie });
   };
 
-  const removeMylistClickedButton = (movie) => {
-    dispatch({ type: 'REMOVE_MYLIST_CLICKED_BUTTON', payload: movie });
+  const removeMovieFromMylist = (movie) => {
+    dispatch({ type: 'REMOVE_MOVIE_FROM_MYLIST', payload: movie });
   };
 
   return (
@@ -70,7 +70,7 @@ export const GlobalProvider = (props) => {
         addToPopularList,
         addToUpComingList,
         addMovieToMylist,
-        removeMylistClickedButton,
+        removeMovieFromMylist,
       }}
     >
       {props.children}
