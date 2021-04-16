@@ -34,6 +34,12 @@ export default (state, action) => {
           (movie) => movie.id !== action.payload.id
         ),
       };
+    case 'ADD_MOVIE_TO_FAVORITE_LIST':
+      return {
+        ...state,
+        myFavoriteMovies: [action.payload, ...state.myFavoriteMovies],
+        notificationBadgeCount: state.notificationBadgeCount + 1,
+      };
     default:
       return state;
   }

@@ -18,6 +18,8 @@ const initialState = {
   mylistMovies: localStorage.getItem('mylistMovies')
     ? JSON.parse(localStorage.getItem('mylistMovies'))
     : [],
+  notificationBadgeCount: 0,
+  myFavoriteMovies: [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -60,6 +62,14 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'REMOVE_MOVIE_FROM_MYLIST', payload: movie });
   };
 
+  const notificationCountNumber = (clicks) => {
+    dispatch({ type: 'NOTIFICATION_COUNT_NUMBER', payload: clicks });
+  };
+
+  const addMovieToFavoriteList = (movie) => {
+    dispatch({ type: 'ADD_MOVIE_TO_FAVORITE_LIST', payload: movie });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -68,12 +78,16 @@ export const GlobalProvider = (props) => {
         popularMovies: state.popularMovies,
         upComingMovies: state.upComingMovies,
         mylistMovies: state.mylistMovies,
+        notificationBadgeCount: state.notificationBadgeCount,
+        myFavoriteMovies: state.myFavoriteMovies,
         addToExploreList,
         addToTopRatedList,
         addToPopularList,
         addToUpComingList,
         addMovieToMylist,
         removeMovieFromMylist,
+        notificationCountNumber,
+        addMovieToFavoriteList,
       }}
     >
       {props.children}

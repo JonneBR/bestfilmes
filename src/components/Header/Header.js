@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { GlobalContext } from '../../context/GlobalState';
 import './Header.css';
 
 export const Header = () => {
   const [click, setClick] = useState(false);
-  // const [notificationClick, setNotificationClick] = useState(false);
+  const { notificationBadgeCount } = useContext(GlobalContext);
 
   const handleClickMenu = () => setClick(!click);
 
@@ -31,13 +32,15 @@ export const Header = () => {
           {/* <div className='notification-container'> */}
           <Link to='favorites'>Favoritos</Link>
 
-          {/* <strong
+          <strong
             className={
-              notificationClick ? 'notification active' : 'notification'
+              notificationBadgeCount > 0
+                ? 'notification'
+                : 'notification active'
             }
           >
-            +2
-          </strong> */}
+            {`+${notificationBadgeCount}`}
+          </strong>
         </li>
       </ul>
     </nav>
