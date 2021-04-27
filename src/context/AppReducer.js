@@ -40,6 +40,11 @@ export default (state, action) => {
         myFavoriteMovies: [action.payload, ...state.myFavoriteMovies],
         notificationBadgeCount: state.notificationBadgeCount + 1,
       };
+    case 'NOTIFICATION_COUNT_NUMBER':
+      return {
+        ...state,
+        notificationBadgeCount: state.notificationBadgeCount + 100,
+      };
     default:
       return state;
   }
