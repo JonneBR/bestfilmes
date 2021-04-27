@@ -3,8 +3,6 @@ import { useHistory } from 'react-router';
 import { GlobalContext } from '../../context/GlobalState';
 import { handleWatchlist } from '../functions/handleWatchlist/handleWatchlist';
 
-//https://www.youtube.com/watch?v=
-
 const ButtonControls = ({ movie }) => {
   const history = useHistory();
 

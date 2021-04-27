@@ -18,11 +18,9 @@ const Watchlist = () => {
       ? setMovieTrailer(trailer[0]['key'])
       : setMovieTrailer(false);
   };
-  // localStorage.setItem('movieTrailer', JSON.stringify(movieTrailer));
   if (location.state !== undefined && movieTrailer === '') {
     fetchMovieTrailer();
   }
-  console.log(location.state);
   return (
     <>
       <div className='container'>
