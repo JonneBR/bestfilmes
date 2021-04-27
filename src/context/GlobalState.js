@@ -62,8 +62,8 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'REMOVE_MOVIE_FROM_MYLIST', payload: movie });
   };
 
-  const notificationCountNumber = (clicks) => {
-    dispatch({ type: 'NOTIFICATION_COUNT_NUMBER', payload: clicks });
+  const setNotificationBadgeToZero = () => {
+    dispatch({ type: 'NOTIFICATION_COUNT_NUMBER' });
   };
 
   const addMovieToFavoriteList = (movie) => {
@@ -86,8 +86,8 @@ export const GlobalProvider = (props) => {
         addToUpComingList,
         addMovieToMylist,
         removeMovieFromMylist,
-        notificationCountNumber,
         addMovieToFavoriteList,
+        setNotificationBadgeToZero,
       }}
     >
       {props.children}

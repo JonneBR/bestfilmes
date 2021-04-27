@@ -43,7 +43,7 @@ export default (state, action) => {
     case 'NOTIFICATION_COUNT_NUMBER':
       return {
         ...state,
-        notificationBadgeCount: state.notificationBadgeCount + 100,
+        notificationBadgeCount: 0,
       };
     default:
       return state;

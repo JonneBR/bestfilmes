@@ -6,8 +6,13 @@ import './Header.css';
 export const Header = () => {
   const [click, setClick] = useState(false);
   const { notificationBadgeCount } = useContext(GlobalContext);
+  const { setNotificationBadgeToZero } = useContext(GlobalContext);
 
   const handleClickMenu = () => setClick(!click);
+
+  const teste = () => {
+    console.log('testando');
+  };
 
   return (
     <nav className='NavbarItems'>
@@ -30,7 +35,9 @@ export const Header = () => {
         </li>
         <li>
           {/* <div className='notification-container'> */}
-          <Link to='favorites'>Favoritos</Link>
+          <Link onClick={setNotificationBadgeToZero} to='favorites'>
+            Favoritos
+          </Link>
 
           <strong
             className={
