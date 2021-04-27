@@ -10,10 +10,6 @@ export const Header = () => {
 
   const handleClickMenu = () => setClick(!click);
 
-  const teste = () => {
-    console.log('testando');
-  };
-
   return (
     <nav className='NavbarItems'>
       <div className='brand'>
@@ -34,7 +30,6 @@ export const Header = () => {
           <Link to='watchlist'>Assistir</Link>
         </li>
         <li>
-          {/* <div className='notification-container'> */}
           <Link onClick={setNotificationBadgeToZero} to='favorites'>
             Favoritos
           </Link>

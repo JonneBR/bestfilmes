@@ -1,0 +1,8 @@
+.main-image-favorites {
+  padding: 270px 0;
+  width: 65%;
+  z-index: 0;
+  background: url('/src/images/wallpaper-favorites.jpg') center no-repeat;
+  background-position-y: 25%;
+  background-size: 100%;
+}
