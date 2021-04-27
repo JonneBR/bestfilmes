@@ -14,8 +14,13 @@ export const Favorites = () => {
         <div className='header'>
           <div className='main-image-favorites'></div>
         </div>
+        <div className='title-section'>
+          <div className='slider-section'>
+            <h1>Favorites</h1>
+          </div>
+        </div>
       </div>
-      <h1>FAVORITES</h1>
+      {/* <h1>FAVORITES</h1> */}
     </>
   );
 };

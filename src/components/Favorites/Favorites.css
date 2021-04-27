@@ -3,6 +3,14 @@
   width: 65%;
   z-index: 0;
   background: url('/src/images/wallpaper-favorites.jpg') center no-repeat;
-  background-position-y: 25%;
-  background-size: 100%;
+  background-position-y: 15%;
+  background-size: cover;
+}
+
+@media screen and (max-width: 850px) {
+  .main-image-favorites {
+    width: 100%;
+    padding: 170px 0;
+    background-size: cover;
+  }
 }
