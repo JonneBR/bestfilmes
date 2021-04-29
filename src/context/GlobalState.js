@@ -70,6 +70,10 @@ export const GlobalProvider = (props) => {
     dispatch({ type: 'ADD_MOVIE_TO_FAVORITE_LIST', payload: movie });
   };
 
+  const removeMovieFromFavoriteList = (movie) => {
+    dispatch({ type: 'REMOVE_MOVIE_FROM_FAVORITE_LIST', payload: movie });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -87,6 +91,7 @@ export const GlobalProvider = (props) => {
         addMovieToMylist,
         removeMovieFromMylist,
         addMovieToFavoriteList,
+        removeMovieFromFavoriteList,
         setNotificationBadgeToZero,
       }}
     >

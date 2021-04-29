@@ -9,9 +9,16 @@ const ButtonControls = ({ movie }) => {
   const { addMovieToMylist, mylistMovies } = useContext(GlobalContext);
   const { removeMovieFromMylist } = useContext(GlobalContext);
   const { addMovieToFavoriteList } = useContext(GlobalContext);
+  const { removeMovieFromFavoriteList, myFavoriteMovies } = useContext(
+    GlobalContext
+  );
 
   const movieExist = mylistMovies.find(
     (mylistMovie) => mylistMovie.id === movie.id
+  );
+
+  const movieFavoriteExist = myFavoriteMovies.find(
+    (myfavoriteMovie) => myfavoriteMovie.id === movie.id
   );
 
   const handleMovieInformation = (movie) => {
@@ -55,10 +62,18 @@ const ButtonControls = ({ movie }) => {
             <i className='far fa-eye'></i>
           </button>
           <button
-            onClick={() => addMovieToFavoriteList(movie)}
+            onClick={
+              movieFavoriteExist
+                ? () => removeMovieFromFavoriteList(movie)
+                : () => addMovieToFavoriteList(movie)
+            }
             className='add-favorites'
           >
-            <i className='far fa-star'></i>
+            <i
+              className={
+                movieFavoriteExist ? 'btn-success far fa-star' : 'far fa-star'
+              }
+            ></i>
           </button>
         </div>
       </div>

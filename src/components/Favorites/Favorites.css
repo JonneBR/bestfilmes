@@ -7,6 +7,10 @@
   background-size: cover;
 }
 
+.add-favorites .btn-success {
+  color: var(--green-cyan);
+}
+
 @media screen and (max-width: 850px) {
   .main-image-favorites {
     width: 100%;

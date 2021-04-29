@@ -45,6 +45,13 @@ export default (state, action) => {
         ...state,
         notificationBadgeCount: 0,
       };
+    case 'REMOVE_MOVIE_FROM_FAVORITE_LIST':
+      return {
+        ...state,
+        myFavoriteMovies: state.myFavoriteMovies.filter(
+          (movie) => movie.id !== action.payload.id
+        ),
+      };
     default:
       return state;
   }
