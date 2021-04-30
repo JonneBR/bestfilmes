@@ -17,13 +17,18 @@ const ButtonControls = ({ movie }) => {
     mylistMovies,
   } = useContext(GlobalContext);
 
+  const doesFavoriteExist = myFavoriteMovies.find(
+    (myfavoriteMovie) => myfavoriteMovie.id === movie.id
+  );
+
   const movieExist = mylistMovies.find(
     (mylistMovie) => mylistMovie.id === movie.id
   );
 
-  const movieFavoriteExist = myFavoriteMovies.find(
-    (myfavoriteMovie) => myfavoriteMovie.id === movie.id
-  );
+  const favoriteHandleButton = () => {
+    if (doesFavoriteExist) return removeMovieFromFavoriteList(movie);
+    return addMovieToFavoriteList(movie);
+  };
 
   const handleMovieInformation = (movie) => {
     history.push('/MovieInformation', {
@@ -65,17 +70,10 @@ const ButtonControls = ({ movie }) => {
           >
             <i className='far fa-eye'></i>
           </button>
-          <button
-            onClick={
-              movieFavoriteExist
-                ? () => removeMovieFromFavoriteList(movie)
-                : () => addMovieToFavoriteList(movie)
-            }
-            className='add-favorites'
-          >
+          <button onClick={favoriteHandleButton} className='add-favorites'>
             <i
               className={
-                movieFavoriteExist ? 'btn-success far fa-star' : 'far fa-star'
+                doesFavoriteExist ? 'btn-success far fa-star' : 'far fa-star'
               }
             ></i>
           </button>
