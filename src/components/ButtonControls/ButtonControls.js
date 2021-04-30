@@ -25,6 +25,11 @@ const ButtonControls = ({ movie }) => {
     (mylistMovie) => mylistMovie.id === movie.id
   );
 
+  const mylistHandleButton = () => {
+    if (movieExist) return removeMovieFromMylist(movie);
+    return addMovieToMylist(movie);
+  };
+
   const favoriteHandleButton = () => {
     if (doesFavoriteExist) return removeMovieFromFavoriteList(movie);
     return addMovieToFavoriteList(movie);
@@ -48,14 +53,7 @@ const ButtonControls = ({ movie }) => {
         </button>
 
         <div className='buttons-wrapper'>
-          <button
-            onClick={
-              movieExist
-                ? () => removeMovieFromMylist(movie)
-                : () => addMovieToMylist(movie)
-            }
-            className='add-mylist'
-          >
+          <button onClick={mylistHandleButton} className='add-mylist'>
             <i
               className={
                 movieExist
