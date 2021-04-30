@@ -24,13 +24,13 @@ export const Header = () => {
       </div>
       <ul className={click ? 'nav-menu active' : 'nav-menu'}>
         <li>
-          <Link to='mylist'>Minha lista</Link>
+          <Link to='/mylist'>Minha lista</Link>
         </li>
         <li>
-          <Link to='watchlist'>Assistir</Link>
+          <Link to='/watchlist'>Assistir</Link>
         </li>
         <li>
-          <Link onClick={setNotificationBadgeToZero} to='favorites'>
+          <Link onClick={setNotificationBadgeToZero} to='/favorites'>
             Favoritos
           </Link>
 

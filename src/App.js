@@ -32,8 +32,12 @@ function App() {
             <Favorites />
           </Route>
 
-          <Route exact path='/MovieInformation'>
-            <MovieInformation />
+          <Route
+            exact
+            path='/MovieInformation/:id'
+            component={MovieInformation}
+          >
+            {/* <MovieInformation /> */}
           </Route>
         </Switch>
       </Router>
