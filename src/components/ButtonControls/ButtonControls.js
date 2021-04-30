@@ -3,15 +3,19 @@ import { useHistory } from 'react-router';
 import { GlobalContext } from '../../context/GlobalState';
 import { handleWatchlist } from '../functions/handleWatchlist/handleWatchlist';
 
+// Criar funções e chama-las para manipular os eventos que ocorrem quando é clicado o botão
+
 const ButtonControls = ({ movie }) => {
   const history = useHistory();
 
-  const { addMovieToMylist, mylistMovies } = useContext(GlobalContext);
-  const { removeMovieFromMylist } = useContext(GlobalContext);
-  const { addMovieToFavoriteList } = useContext(GlobalContext);
-  const { removeMovieFromFavoriteList, myFavoriteMovies } = useContext(
-    GlobalContext
-  );
+  const {
+    addMovieToMylist,
+    removeMovieFromMylist,
+    addMovieToFavoriteList,
+    removeMovieFromFavoriteList,
+    myFavoriteMovies,
+    mylistMovies,
+  } = useContext(GlobalContext);
 
   const movieExist = mylistMovies.find(
     (mylistMovie) => mylistMovie.id === movie.id
