@@ -5,12 +5,18 @@ import { handleWatchlist } from '../functions/handleWatchlist/handleWatchlist';
 import SimilarMovies from '../SimilarMovies/SimilarMovies';
 import './MovieInformation.css';
 
+// If location === NULL call the id from context
+
 const MovieInformation = () => {
   const history = useHistory();
   const location = useLocation();
+  const directInsertedUrlByUser = history.location.pathname.split('/')[2];
+  // console.log(location.state);
+  // console.log(location.state.params);
 
-  const { addMovieToMylist, mylistMovies } = useContext(GlobalContext);
-  const { removeMovieFromMylist } = useContext(GlobalContext);
+  const { addMovieToMylist, removeMovieFromMylist, mylistMovies } = useContext(
+    GlobalContext
+  );
 
   const movieExist = mylistMovies.find(
     (mylistMovie) => mylistMovie.id === location.state.params.id

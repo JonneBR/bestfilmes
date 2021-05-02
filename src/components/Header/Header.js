@@ -5,8 +5,9 @@ import './Header.css';
 
 export const Header = () => {
   const [click, setClick] = useState(false);
-  const { notificationBadgeCount } = useContext(GlobalContext);
-  const { setNotificationBadgeToZero } = useContext(GlobalContext);
+  const { notificationBadgeCount, setNotificationBadgeToZero } = useContext(
+    GlobalContext
+  );
 
   const handleClickMenu = () => setClick(!click);
 
