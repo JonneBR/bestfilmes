@@ -51,6 +51,9 @@ export default (state, action) => {
         myFavoriteMovies: state.myFavoriteMovies.filter(
           (movie) => movie.id !== action.payload.id
         ),
+        notificationBadgeCount:
+          state.notificationBadgeCount !== 0 &&
+          state.notificationBadgeCount - 1,
       };
     default:
       return state;
