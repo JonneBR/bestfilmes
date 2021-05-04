@@ -10,7 +10,6 @@ import './MovieInformation.css';
 const MovieInformation = () => {
   const history = useHistory();
   const location = useLocation();
-  const directInsertedUrlByUser = history.location.pathname.split('/')[2];
   // console.log(location.state);
   // console.log(location.state.params);
 

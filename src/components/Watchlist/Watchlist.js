@@ -42,11 +42,11 @@ const Watchlist = () => {
             ></iframe>
           ) : movieTrailer === false ? (
             <div className='no-movies-container'>
-              <h1>NÃO HÁ TRAILER PARA ESTE FILME</h1>
+              <h1>Não há trailer para este filme</h1>
             </div>
           ) : (
             <div className='no-movies-container'>
-              <h1>CLIQUE EM UM FILME ANTES PARA VER SEU TRAILER</h1>
+              <h1>Clique em um filme antes para ver seu trailer</h1>
             </div>
           )}
         </div>

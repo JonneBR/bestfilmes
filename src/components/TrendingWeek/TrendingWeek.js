@@ -11,7 +11,6 @@ const TrendingWeek = () => {
     );
     const trendingWeek = await apiCall.json();
     addToExploreList(trendingWeek.results);
-    console.log('entrandoTrending?');
   };
   if (exploreList.length === 0) {
     fetchTrendingWeek();

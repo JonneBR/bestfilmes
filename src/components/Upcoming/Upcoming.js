@@ -12,7 +12,6 @@ export const Upcoming = () => {
       .then((data) => {
         if (!data.errors) {
           addToUpComingList(data.results);
-          console.log('entrando');
         } else {
           console.log('erro');
         }

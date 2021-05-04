@@ -12,7 +12,6 @@ export const TopRated = () => {
       .then((data) => {
         if (!data.errors) {
           addToTopRatedList(data.results);
-          console.log('entrandoTop');
         } else {
           console.log('erro');
         }

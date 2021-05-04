@@ -12,7 +12,6 @@ export const Popular = () => {
       .then((data) => {
         if (!data.errors) {
           addToPopularList(data.results);
-          console.log('Popular');
         } else {
           console.log('erro');
         }

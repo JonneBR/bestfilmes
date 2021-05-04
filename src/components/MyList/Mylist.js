@@ -45,7 +45,7 @@ export const Mylist = () => {
           </div>
         ) : (
           <div className='no-movies-container'>
-            <h1>NÃO HÁ FILMES ADICIONADOS EM SUA LISTA</h1>
+            <h1>Não há filmes adicionados em sua lista</h1>
           </div>
         )}
       </div>
