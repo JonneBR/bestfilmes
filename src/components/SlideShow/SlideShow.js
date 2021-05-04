@@ -7,12 +7,10 @@ const SlideShow = ({ movie }) => {
   const settings = {
     centerMode: true,
     swipeToSlide: true,
-    // centerPadding: '100px',
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
-    // slidesToScroll: 1,
     variableWidth: true,
     responsive: [
       {
