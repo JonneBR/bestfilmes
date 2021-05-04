@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './Mylist.css';
+import './MyList.css';
 import noPosterAvailable from '../../images/noPosterAvailable.jpg';
 import { GlobalContext } from '../../context/GlobalState';
 import ButtonControls from '../ButtonControls/ButtonControls';
